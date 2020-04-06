@@ -11,8 +11,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("views/main_view.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("SnapMacro");
+        Scene scene = new Scene(root,600, 400);
+        scene.getStylesheets().add("snapmacro/styles/editor_style.css");
+
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
