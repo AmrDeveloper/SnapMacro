@@ -1,4 +1,4 @@
-package sample;
+package snapmacro;
 
 public class Controller {
 }

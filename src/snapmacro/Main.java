@@ -1,4 +1,4 @@
-package sample;
+package snapmacro;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
