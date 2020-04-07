@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SnapMacro:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SnapMacro_jar</output-path>
+    <root id="archive" name="SnapMacro.jar">
+      <element id="module-output" name="SnapMacro" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/richtextfx-fat-0.9.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
