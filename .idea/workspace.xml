@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/views/main_view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/snapmacro/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/editor_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/styles/editor_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +99,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/snapmacro/res" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -106,11 +107,13 @@
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Software\SnapMacro\src\snapmacro\res" />
+      <recent name="D:\Software\SnapMacro\src\snapmacro\res\icons" />
+      <recent name="D:\Software\SnapMacro\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Software\SnapMacro\src\snapmacro\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Software\SnapMacro\lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -217,42 +220,46 @@
       <screen x="0" y="0" width="1280" height="994" />
     </state>
     <state x="445" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1280.994@0.0.1280.994" timestamp="1586192635258" />
+    <state x="436" y="401" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1586242664521">
+      <screen x="0" y="0" width="1280" height="994" />
+    </state>
+    <state x="436" y="401" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.994@0.0.1280.994" timestamp="1586242664521" />
     <state x="346" y="237" key="FileChooserDialogImpl" timestamp="1586192562531">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
     <state x="346" y="237" key="FileChooserDialogImpl/0.0.1280.994@0.0.1280.994" timestamp="1586192562531" />
-    <state width="1236" height="261" key="GridCell.Tab.0.bottom" timestamp="1586194653389">
+    <state width="1236" height="261" key="GridCell.Tab.0.bottom" timestamp="1586243306751">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="261" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1586194653389" />
-    <state width="1236" height="261" key="GridCell.Tab.0.center" timestamp="1586194653388">
+    <state width="1236" height="261" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1586243306751" />
+    <state width="1236" height="261" key="GridCell.Tab.0.center" timestamp="1586243306751">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="261" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1586194653388" />
-    <state width="1236" height="261" key="GridCell.Tab.0.left" timestamp="1586194653388">
+    <state width="1236" height="261" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1586243306751" />
+    <state width="1236" height="261" key="GridCell.Tab.0.left" timestamp="1586243306751">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="261" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1586194653388" />
-    <state width="1236" height="261" key="GridCell.Tab.0.right" timestamp="1586194653388">
+    <state width="1236" height="261" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1586243306751" />
+    <state width="1236" height="261" key="GridCell.Tab.0.right" timestamp="1586243306751">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="261" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1586194653388" />
-    <state width="1236" height="323" key="GridCell.Tab.1.bottom" timestamp="1586194248432">
+    <state width="1236" height="261" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1586243306751" />
+    <state width="1236" height="323" key="GridCell.Tab.1.bottom" timestamp="1586201905460">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="323" key="GridCell.Tab.1.bottom/0.0.1280.994@0.0.1280.994" timestamp="1586194248432" />
-    <state width="1236" height="323" key="GridCell.Tab.1.center" timestamp="1586194248432">
+    <state width="1236" height="323" key="GridCell.Tab.1.bottom/0.0.1280.994@0.0.1280.994" timestamp="1586201905460" />
+    <state width="1236" height="323" key="GridCell.Tab.1.center" timestamp="1586201905460">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="323" key="GridCell.Tab.1.center/0.0.1280.994@0.0.1280.994" timestamp="1586194248432" />
-    <state width="1236" height="323" key="GridCell.Tab.1.left" timestamp="1586194248431">
+    <state width="1236" height="323" key="GridCell.Tab.1.center/0.0.1280.994@0.0.1280.994" timestamp="1586201905460" />
+    <state width="1236" height="323" key="GridCell.Tab.1.left" timestamp="1586201905460">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="323" key="GridCell.Tab.1.left/0.0.1280.994@0.0.1280.994" timestamp="1586194248431" />
-    <state width="1236" height="323" key="GridCell.Tab.1.right" timestamp="1586194248432">
+    <state width="1236" height="323" key="GridCell.Tab.1.left/0.0.1280.994@0.0.1280.994" timestamp="1586201905460" />
+    <state width="1236" height="323" key="GridCell.Tab.1.right" timestamp="1586201905460">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="323" key="GridCell.Tab.1.right/0.0.1280.994@0.0.1280.994" timestamp="1586194248432" />
+    <state width="1236" height="323" key="GridCell.Tab.1.right/0.0.1280.994@0.0.1280.994" timestamp="1586201905460" />
     <state x="120" y="70" key="SettingsEditor" timestamp="1586192566052">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
