@@ -5,16 +5,18 @@ import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
+import snapmacro.lang.DebugType;
+import snapmacro.lang.DebuggerListener;
+import snapmacro.lang.SnapRuntime;
+import snapmacro.lang.StreamListener;
 import snapmacro.ui.SnapEditor;
 import snapmacro.utils.CursorManager;
 import snapmacro.utils.DialogUtils;
@@ -49,10 +51,12 @@ public class MainController implements Initializable {
 
     //Layouts
     @FXML private TabPane scriptTabPane;
+    @FXML private SplitPane snapLayoutSplitPane;
 
     private CodeArea currentCodeArea;
 
     private Logger logger;
+    private SnapRuntime snapRuntime;
     private Future<?> currentFutureTask;
     private ExecutorService executorService;
 
@@ -64,6 +68,7 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         executorService = Executors.newFixedThreadPool(THREAD_AVAILABLE_NUMBER);
         logger = Logger.getLogger(DEBUG_TAG);
+        snapRuntime = new SnapRuntime(mStreamListener);
 
         setupViewsHover();
         setupViewsListeners();
@@ -83,7 +88,7 @@ public class MainController implements Initializable {
 
     private void setupViewsListeners(){
         runAction.setOnMouseClicked(this::runSnapScript);
-        debugAction.setOnMouseClicked(this::showDebugArea);
+        debugAction.setOnMouseClicked(this::runSnapScriptDebugger);
         restartAction.setOnMouseClicked(this::restartSnapScript);
         loadAction.setOnMouseClicked(this::loadSnapScript);
         saveAction.setOnMouseClicked(this::saveSnapScript);
@@ -141,21 +146,38 @@ public class MainController implements Initializable {
     }
 
     private void runSnapScript(MouseEvent event){
+        resultTextArea.clear();
         if(currentCodeArea == null){
             DialogUtils.createErrorDialog("Error Message",
                     null, "Select Snap script");
             return;
         }
         String scriptText = currentCodeArea.getText();
-
+        snapRuntime.removeDebuggerListener();
+        snapRuntime.runSnapCode(scriptText);
     }
 
-    private void showDebugArea(MouseEvent event){
-
+    private void runSnapScriptDebugger(MouseEvent event){
+        resultTextArea.clear();
+        if(currentCodeArea == null){
+            DialogUtils.createErrorDialog("Error Message",
+                    null, "Select Snap script");
+            return;
+        }
+        String scriptText = currentCodeArea.getText();
+        snapRuntime.setDebuggerListener(mDebuggerListener);
+        snapRuntime.runSnapCode(scriptText);
     }
 
     private void restartSnapScript(MouseEvent event){
-
+        resultTextArea.clear();
+        if(currentCodeArea == null){
+            DialogUtils.createErrorDialog("Error Message",
+                    null, "Select Snap script");
+            return;
+        }
+        String scriptText = currentCodeArea.getText();
+        snapRuntime.runSnapCode(scriptText);
     }
 
     private void loadSnapScript(MouseEvent event){
@@ -180,7 +202,7 @@ public class MainController implements Initializable {
     private void showCursorPosition(MouseEvent event){
         showCursorPosition = !showCursorPosition;
         if(showCursorPosition) {
-            logger.warning("Start showing Cursor position");
+            logger.info("Start showing Cursor position");
             final Point[] currentPoint = {null};
             currentFutureTask = executorService.submit(() -> {
                 while (showCursorPosition) {
@@ -197,7 +219,7 @@ public class MainController implements Initializable {
                 }
             });
         }else{
-            logger.warning("Stop showing Cursor position");
+            logger.info("Stop showing Cursor position");
             currentFutureTask.cancel(false);
         }
     }
@@ -212,5 +234,13 @@ public class MainController implements Initializable {
                 currentCodeArea = (CodeArea) ((Parent) newVal.getContent()).getChildrenUnmodifiable().get(0);
             }
         }
+    };
+
+    private final StreamListener mStreamListener = (message) -> {
+        resultTextArea.appendText(message);
+    };
+
+    private final DebuggerListener mDebuggerListener = (message, type) -> {
+        resultTextArea.appendText(message);
     };
 }
