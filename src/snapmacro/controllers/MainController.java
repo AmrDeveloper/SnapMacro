@@ -149,7 +149,8 @@ public class MainController implements Initializable {
     }
 
     private void loadSnapScript(MouseEvent event){
-
+        File snapScript = FileManager.openSourceFile("Load Snap Script");
+        openSnapScriptNewTab(snapScript);
     }
 
     private void saveSnapScript(MouseEvent event){
@@ -174,10 +175,10 @@ public class MainController implements Initializable {
         resultTextArea.clear();
     }
 
-    private ChangeListener<Tab> onTabSelectChangeListener = (observable, oldValue, newValue) -> {
-        if (Objects.nonNull(newValue)) {
-            if (newValue.getText().endsWith(".ss")) {
-                currentCodeArea = (CodeArea) ((Parent) newValue.getContent()).getChildrenUnmodifiable().get(0);
+    private final ChangeListener<Tab> onTabSelectChangeListener = (observable, oldVal, newVal) -> {
+        if (Objects.nonNull(newVal)) {
+            if (newVal.getText().endsWith(".ss")) {
+                currentCodeArea = (CodeArea) ((Parent) newVal.getContent()).getChildrenUnmodifiable().get(0);
             }
         }
     };
