@@ -12,16 +12,25 @@ public class SnapParser {
 
     private int currentIndex;
     private final List<Token> tokens;
+    private DebuggerListener mDebuggerListener;
 
     public SnapParser(List<Token> tokens){
         this.tokens = tokens;
     }
 
+    public SnapParser(List<Token> tokens, DebuggerListener debugger){
+        this.tokens = tokens;
+        this.mDebuggerListener = debugger;
+    }
 
     public List<Statement> parse() {
         List<Statement> statements = new ArrayList<>();
-        while (!isAtEnd()) {
-            statements.add(declaration());
+        try{
+            while (!isAtEnd()) {
+                statements.add(declaration());
+            }
+        }catch (ExitEvent e){
+            showDebugMessage("Exit parser", DebugType.ERROR);
         }
         return statements;
     }
@@ -253,7 +262,8 @@ public class SnapParser {
         if (match(NUMBER, STRING, CHAR)) return new LiteralExp(previous().getLiteral());
         if (match(IDENTIFIER)) return new Variable(previous());
         System.out.println(previous());
-        throw new RuntimeException("Invalid Primary Exception");
+        showDebugMessage("Invalid Primary Exception", DebugType.ERROR);
+        throw new ExitEvent();
     }
 
     private boolean match(TokenType... types) {
@@ -290,7 +300,8 @@ public class SnapParser {
 
     private Token consume(TokenType type, String message) {
         if (check(type)) return advance();
-        throw new RuntimeException(message);
+        showDebugMessage(message, DebugType.ERROR);
+        throw new ExitEvent();
     }
 
     private void synchronize() {
@@ -306,5 +317,17 @@ public class SnapParser {
             }
             advance();
         }
+    }
+
+    public void setDebuggerListener(DebuggerListener listener){
+        mDebuggerListener = listener;
+    }
+
+    public void removeDebuggerListener(){
+        mDebuggerListener = null;
+    }
+
+    private void showDebugMessage(String message, DebugType type){
+        ListenerMessage.showDebugMessage(mDebuggerListener, message, type);
     }
 }

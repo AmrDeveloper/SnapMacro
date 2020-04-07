@@ -1,8 +1,5 @@
 package snapmacro.lang;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +12,6 @@ public class Interpreter implements
     private Environment environment = globals;
     private final Map<Expression, Integer> locals = new HashMap<>();
     private final RobotController robotController = RobotController.getInstance();
-    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
     private StreamListener mStreamListener;
     private DebuggerListener mDebuggerListener;
@@ -436,16 +432,10 @@ public class Interpreter implements
     }
 
     private void showStreamMessage(String message){
-        if(mStreamListener != null){
-            mStreamListener.getStreamListener(message);
-        }
+        ListenerMessage.showStreamMessage(mStreamListener, message);
     }
 
     private void showDebugMessage(String message, DebugType type){
-        if(mDebuggerListener != null){
-            Date date = new Date();
-            String datedMessage = dateFormat.format(date) + ":\t" + message + "\n";
-            mDebuggerListener.getDebugMessages(datedMessage, type);
-        }
+        ListenerMessage.showDebugMessage(mDebuggerListener, message, type);
     }
 }

@@ -61,7 +61,7 @@ public class SnapRuntime {
     public void runSnapCode(String source) {
         SnapLexer tankLexer = new SnapLexer(source);
         List<Token> tokens = tankLexer.scanTokens();
-        SnapParser parser = new SnapParser(tokens);
+        SnapParser parser = new SnapParser(tokens, mDebuggerListener);
         List<Statement> statements = parser.parse();
 
         //Start Tank Interpreter
