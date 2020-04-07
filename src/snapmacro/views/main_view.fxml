@@ -39,6 +39,11 @@
             <Image url="@../res/cursor_icon.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="clearAction" fitHeight="25.0" fitWidth="25.0" layoutX="185.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="2.0">
+         <image>
+            <Image url="@../res/clear_icon.png" />
+         </image>
+      </ImageView>
       <SplitPane dividerPositions="0.8" layoutX="3.0" layoutY="27.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class SnapSyntax {
 
     public static final String[] KEYWORDS = new String[]{
-            "var", "function", "mouse", "keyword", "screen",
+            "var", "function", "mouse", "keyword", "screen", "capture",
             "point", "click", "press", "right", "left",
 
             "true", "false", "while", "if", "repeat", "exit", "sleep",

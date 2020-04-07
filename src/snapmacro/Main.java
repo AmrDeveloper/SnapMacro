@@ -12,12 +12,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("views/main_view.fxml"));
-        primaryStage.setTitle("Snap Macro");
         Scene scene = new Scene(root,600, 400);
         scene.getStylesheets().add("snapmacro/styles/editor_style.css");
 
         Image appIconImage = new Image(Main.class.getResourceAsStream("res/app_icon.png"));
+        primaryStage.setTitle("Snap Macro");
         primaryStage.getIcons().add(appIconImage);
+        primaryStage.setOnCloseRequest(event -> System.exit(0));
         primaryStage.setScene(scene);
         primaryStage.show();
     }

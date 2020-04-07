@@ -1,14 +1,30 @@
 package snapmacro.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import org.fxmisc.flowless.VirtualizedScrollPane;
+import org.fxmisc.richtext.CodeArea;
+import snapmacro.ui.SnapEditor;
+import snapmacro.utils.DialogUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainController implements Initializable {
 
@@ -19,16 +35,25 @@ public class MainController implements Initializable {
     @FXML private ImageView loadAction;
     @FXML private ImageView saveAction;
     @FXML private ImageView cursorAction;
+    @FXML private ImageView clearAction;
+
     @FXML private TextArea resultTextArea;
 
     //Layouts
     @FXML private TabPane scriptTabPane;
 
+    private ExecutorService executorService;
+
+    private static final int THREAD_AVAILABLE_NUMBER = Runtime.getRuntime().availableProcessors();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        executorService = Executors.newFixedThreadPool(THREAD_AVAILABLE_NUMBER);
+
         setupViewsHover();
         setupViewsListeners();
         setupResultTextArea();
+        setupSnapScriptTabsLayout();
     }
 
     private void setupViewsHover(){
@@ -38,18 +63,92 @@ public class MainController implements Initializable {
         Tooltip.install(loadAction, new Tooltip("Load snap file"));
         Tooltip.install(saveAction, new Tooltip("Save snap File"));
         Tooltip.install(cursorAction, new Tooltip("Show cursor Position"));
+        Tooltip.install(clearAction, new Tooltip("Clear debug TextArea"));
     }
 
     private void setupViewsListeners(){
-        runAction.setOnMouseClicked(e -> System.out.println("Run script"));
-        debugAction.setOnMouseClicked(e -> System.out.println("Debug snap Script"));
-        restartAction.setOnMouseClicked(e -> System.out.println("Restart snap Script"));
-        loadAction.setOnMouseClicked(e -> System.out.println("Load snap file"));
-        saveAction.setOnMouseClicked(e -> System.out.println("Save snap File"));
-        cursorAction.setOnMouseClicked(e -> System.out.println("Show cursor Position"));
+        runAction.setOnMouseClicked(this::runSnapScript);
+        debugAction.setOnMouseClicked(this::showDebugArea);
+        restartAction.setOnMouseClicked(this::restartSnapScript);
+        loadAction.setOnMouseClicked(this::loadSnapScript);
+        saveAction.setOnMouseClicked(this::saveSnapScript);
+        cursorAction.setOnMouseClicked(this::showCursorPosition);
+        clearAction.setOnMouseClicked(this::clearDebugArea);
     }
 
     private void setupResultTextArea(){
         resultTextArea.setEditable(false);
+    }
+
+    private void setupSnapScriptTabsLayout(){
+        scriptTabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.ALL_TABS);
+        scriptTabPane.setOnDragDropped(this::onCodeLayoutDragDropped);
+        scriptTabPane.setOnDragOver(this::onScriptLayoutDragOver);
+    }
+
+    private void onCodeLayoutDragDropped(DragEvent event) {
+        List<File> currentDropped = event.getDragboard().getFiles();
+        for (File file : currentDropped) {
+            String fileName = file.getName();
+            if(fileName.endsWith(".ss")) {
+                executorService.execute(() -> openSnapScriptNewTab(file));
+            }
+        }
+    }
+
+    private void onScriptLayoutDragOver(DragEvent event) {
+        if (event.getDragboard().hasFiles()) {
+            event.acceptTransferModes(TransferMode.MOVE);
+        }
+    }
+
+    private void openSnapScriptNewTab(File snapFile){
+        Tab snapScriptTab = new Tab(snapFile.getName());
+        snapScriptTab.setUserData(snapFile.getPath());
+
+        CodeArea snapCodeArea = new CodeArea();
+        SnapEditor editorController = new SnapEditor(snapCodeArea, resultTextArea);
+        editorController.editorSettings();
+
+        try{
+            StringBuilder code = new StringBuilder();
+            Files.readAllLines(snapFile.toPath(), Charset.defaultCharset()).forEach(s -> code.append(s).append("\n"));
+            snapCodeArea.replaceText(0, 0, code.toString());
+
+            snapScriptTab.setContent(new VirtualizedScrollPane<>(snapCodeArea));
+
+            Platform.runLater(() -> scriptTabPane.getTabs().add(snapScriptTab));
+            editorController.updateSourceFile(snapFile);
+        }catch (IOException e){
+            DialogUtils.createErrorDialog("Invalid", "Error", "Invalid Snap Script file");
+        }
+    }
+
+    private void runSnapScript(MouseEvent event){
+
+    }
+
+    private void showDebugArea(MouseEvent event){
+
+    }
+
+    private void restartSnapScript(MouseEvent event){
+
+    }
+
+    private void loadSnapScript(MouseEvent event){
+
+    }
+
+    private void saveSnapScript(MouseEvent event){
+
+    }
+
+    private void showCursorPosition(MouseEvent event){
+
+    }
+
+    private void clearDebugArea(MouseEvent event){
+        resultTextArea.clear();
     }
 }
