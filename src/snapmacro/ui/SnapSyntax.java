@@ -8,7 +8,7 @@ public class SnapSyntax {
             "var", "function", "mouse", "keyword", "screen", "capture",
             "point", "click", "press", "right", "left",
 
-            "true", "false", "while", "if", "repeat", "exit", "sleep",
+            "true", "false", "while", "if", "repeat", "exit", "sleep", "echo",
             "or", "xor", "and"
     };
 
@@ -17,7 +17,7 @@ public class SnapSyntax {
     private static final String BRACE_PATTERN = "\\{|\\}";
     private static final String BRACKET_PATTERN = "\\[|\\]";
     private static final String STRING_PATTERN = "\"([^\"\\\\]|\\\\.)*\"";
-    private static final String ANNOTATION_PATTERN = "@.[a-zA-Z0-9]+";
+    private static final String COMMENT_PATTERN = "#[0-9a-zA-Z ]*";
     private static final String OPERATION_PATTERN = "==|>|<|!=|>=|<=|=|>|<|%|-|\\+|\\-|\\-=|\\^|\\&|\\|::|\\?|\\*";
     private static final String NUMBERS_PATTERN = "[0-9]+";
 
@@ -27,7 +27,7 @@ public class SnapSyntax {
                     + "|(?<BRACE>" + BRACE_PATTERN + ")"
                     + "|(?<BRACKET>" + BRACKET_PATTERN + ")"
                     + "|(?<STRING>" + STRING_PATTERN + ")"
-                    + "|(?<ANNOTATION>" + ANNOTATION_PATTERN + ")"
+                    + "|(?<COMMENT>" + COMMENT_PATTERN + ")"
                     + "|(?<OPERATION>" + OPERATION_PATTERN + ")"
                     + "|(?<NUMBER>" + NUMBERS_PATTERN + ")"
     );
