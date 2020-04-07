@@ -96,8 +96,10 @@ public class SnapLexer {
            case ' ':
            case '\r':
            case '\t':
-           case '#':
                // Ignore whitespace and comments.
+               break;
+           case '#':
+               while (getCurrentChar() != '\n' && !isAtEnd()) pointToNextChar();
                break;
            case '\n':
                line++;
