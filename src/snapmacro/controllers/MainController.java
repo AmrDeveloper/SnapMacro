@@ -1,8 +1,10 @@
 package snapmacro.controllers;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
@@ -15,6 +17,7 @@ import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
 import snapmacro.ui.SnapEditor;
 import snapmacro.utils.DialogUtils;
+import snapmacro.utils.FileManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,6 +25,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -42,6 +46,7 @@ public class MainController implements Initializable {
     //Layouts
     @FXML private TabPane scriptTabPane;
 
+    private CodeArea currentCodeArea;
     private ExecutorService executorService;
 
     private static final int THREAD_AVAILABLE_NUMBER = Runtime.getRuntime().availableProcessors();
@@ -84,6 +89,7 @@ public class MainController implements Initializable {
         scriptTabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.ALL_TABS);
         scriptTabPane.setOnDragDropped(this::onCodeLayoutDragDropped);
         scriptTabPane.setOnDragOver(this::onScriptLayoutDragOver);
+        scriptTabPane.getSelectionModel().selectedItemProperty().addListener(onTabSelectChangeListener);
     }
 
     private void onCodeLayoutDragDropped(DragEvent event) {
@@ -120,11 +126,17 @@ public class MainController implements Initializable {
             Platform.runLater(() -> scriptTabPane.getTabs().add(snapScriptTab));
             editorController.updateSourceFile(snapFile);
         }catch (IOException e){
-            DialogUtils.createErrorDialog("Invalid", "Error", "Invalid Snap Script file");
+            DialogUtils.createErrorDialog("Error", null, "Invalid Snap Script file");
         }
     }
 
     private void runSnapScript(MouseEvent event){
+        if(currentCodeArea == null){
+            DialogUtils.createErrorDialog("Error Message",
+                    null, "Select Snap script");
+            return;
+        }
+        String scriptText = currentCodeArea.getText();
 
     }
 
@@ -141,7 +153,17 @@ public class MainController implements Initializable {
     }
 
     private void saveSnapScript(MouseEvent event){
+        int selectedIndex = scriptTabPane.getSelectionModel().getSelectedIndex();
+        if(selectedIndex == -1){
+            DialogUtils.createErrorDialog("Error Message",
+                    "Invalid File", "Select Snap script");
+            return;
+        }
 
+        String scriptText = currentCodeArea.getText();
+        Tab currentTab = scriptTabPane.getTabs().get(selectedIndex);
+        String scriptFilePath = currentTab.getUserData().toString();
+        FileManager.updateContent(new File(scriptFilePath), scriptText);
     }
 
     private void showCursorPosition(MouseEvent event){
@@ -151,4 +173,12 @@ public class MainController implements Initializable {
     private void clearDebugArea(MouseEvent event){
         resultTextArea.clear();
     }
+
+    private ChangeListener<Tab> onTabSelectChangeListener = (observable, oldValue, newValue) -> {
+        if (Objects.nonNull(newValue)) {
+            if (newValue.getText().endsWith(".ss")) {
+                currentCodeArea = (CodeArea) ((Parent) newValue.getContent()).getChildrenUnmodifiable().get(0);
+            }
+        }
+    };
 }
