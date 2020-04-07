@@ -265,6 +265,7 @@ public class Interpreter implements
         String order = statement.getOrder().getLexeme();
         String path = statement.getValue().getLexeme();
         if (order.equals("capture")) {
+            path = path.replaceAll("\"", "");
             robotController.captureScreen(path);
         } else {
             showDebugMessage("Invalid Screen Instruction", DebugType.ERROR);

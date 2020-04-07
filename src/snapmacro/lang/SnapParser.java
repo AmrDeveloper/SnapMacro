@@ -82,7 +82,7 @@ public class SnapParser {
 
     private Statement screenStatement(){
         Token order = consume(IDENTIFIER, "Expect Screen Instruction.");
-        Token value = consume(IDENTIFIER, "Expect Screen Value.");
+        Token value = consume(STRING, "Expect Directory Path for screenshots.");
         return new ScreenStatement(order, value);
     }
 
