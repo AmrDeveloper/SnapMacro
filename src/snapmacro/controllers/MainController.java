@@ -16,9 +16,11 @@ import javafx.scene.input.TransferMode;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
 import snapmacro.ui.SnapEditor;
+import snapmacro.utils.CursorManager;
 import snapmacro.utils.DialogUtils;
 import snapmacro.utils.FileManager;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -29,6 +31,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.logging.Logger;
 
 public class MainController implements Initializable {
 
@@ -47,13 +51,19 @@ public class MainController implements Initializable {
     @FXML private TabPane scriptTabPane;
 
     private CodeArea currentCodeArea;
+
+    private Logger logger;
+    private Future<?> currentFutureTask;
     private ExecutorService executorService;
 
+    private boolean showCursorPosition = false;
+    private static final String DEBUG_TAG = MainController.class.getSimpleName();
     private static final int THREAD_AVAILABLE_NUMBER = Runtime.getRuntime().availableProcessors();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         executorService = Executors.newFixedThreadPool(THREAD_AVAILABLE_NUMBER);
+        logger = Logger.getLogger(DEBUG_TAG);
 
         setupViewsHover();
         setupViewsListeners();
@@ -168,7 +178,28 @@ public class MainController implements Initializable {
     }
 
     private void showCursorPosition(MouseEvent event){
-
+        showCursorPosition = !showCursorPosition;
+        if(showCursorPosition) {
+            logger.warning("Start showing Cursor position");
+            final Point[] currentPoint = {null};
+            currentFutureTask = executorService.submit(() -> {
+                while (showCursorPosition) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Point position = CursorManager.getCursorPosition();
+                    if(!position.equals(currentPoint[0])) {
+                        Platform.runLater(() -> resultTextArea.appendText("X:" + position.x + "\tY:" + position.y + "\n"));
+                        currentPoint[0] = position;
+                    }
+                }
+            });
+        }else{
+            logger.warning("Stop showing Cursor position");
+            currentFutureTask.cancel(false);
+        }
     }
 
     private void clearDebugArea(MouseEvent event){
