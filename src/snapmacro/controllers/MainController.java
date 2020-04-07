@@ -13,10 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
-import snapmacro.lang.DebugType;
-import snapmacro.lang.DebuggerListener;
-import snapmacro.lang.SnapRuntime;
-import snapmacro.lang.StreamListener;
+import snapmacro.lang.*;
 import snapmacro.ui.SnapEditor;
 import snapmacro.utils.CursorManager;
 import snapmacro.utils.DialogUtils;
@@ -42,6 +39,7 @@ public class MainController implements Initializable {
     @FXML private ImageView runAction;
     @FXML private ImageView debugAction;
     @FXML private ImageView restartAction;
+    @FXML private ImageView stopAction;
     @FXML private ImageView loadAction;
     @FXML private ImageView saveAction;
     @FXML private ImageView cursorAction;
@@ -80,6 +78,7 @@ public class MainController implements Initializable {
         Tooltip.install(runAction, new Tooltip("Run snap Script"));
         Tooltip.install(debugAction, new Tooltip("Debug snap Script"));
         Tooltip.install(restartAction, new Tooltip("Restart snap Script"));
+        Tooltip.install(stopAction, new Tooltip("Stop snap Script"));
         Tooltip.install(loadAction, new Tooltip("Load snap file"));
         Tooltip.install(saveAction, new Tooltip("Save snap File"));
         Tooltip.install(cursorAction, new Tooltip("Show cursor Position"));
@@ -90,6 +89,7 @@ public class MainController implements Initializable {
         runAction.setOnMouseClicked(this::runSnapScript);
         debugAction.setOnMouseClicked(this::runSnapScriptDebugger);
         restartAction.setOnMouseClicked(this::restartSnapScript);
+        stopAction.setOnMouseClicked(this::stopSnapScript);
         loadAction.setOnMouseClicked(this::loadSnapScript);
         saveAction.setOnMouseClicked(this::saveSnapScript);
         cursorAction.setOnMouseClicked(this::showCursorPosition);
@@ -154,7 +154,7 @@ public class MainController implements Initializable {
         }
         String scriptText = currentCodeArea.getText();
         snapRuntime.removeDebuggerListener();
-        snapRuntime.runSnapCode(scriptText);
+        currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
     }
 
     private void runSnapScriptDebugger(MouseEvent event){
@@ -166,7 +166,7 @@ public class MainController implements Initializable {
         }
         String scriptText = currentCodeArea.getText();
         snapRuntime.setDebuggerListener(mDebuggerListener);
-        snapRuntime.runSnapCode(scriptText);
+        currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
     }
 
     private void restartSnapScript(MouseEvent event){
@@ -177,12 +177,21 @@ public class MainController implements Initializable {
             return;
         }
         String scriptText = currentCodeArea.getText();
-        snapRuntime.runSnapCode(scriptText);
+        currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
     }
 
     private void loadSnapScript(MouseEvent event){
         File snapScript = FileManager.openSourceFile("Load Snap Script");
         openSnapScriptNewTab(snapScript);
+    }
+
+    private void stopSnapScript(MouseEvent event){
+        if(currentCodeArea == null){
+            DialogUtils.createErrorDialog("Error Message",
+                    null, "Select Snap script");
+            return;
+        }
+        currentFutureTask.cancel(true);
     }
 
     private void saveSnapScript(MouseEvent event){

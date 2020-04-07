@@ -108,4 +108,8 @@ public class SnapRuntime {
         System.err.println(error.getMessage() +" \n[line " + error.getToken().getLine() + "]");
         hadRuntimeError = true;
     }
+
+    public void stopInterpreter(){
+        interpreter.visit(new ExitStatement());
+    }
 }

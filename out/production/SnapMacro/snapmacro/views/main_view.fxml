@@ -24,22 +24,22 @@
             <Image url="@../res/restart_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="loadAction" fitHeight="25.0" fitWidth="25.0" layoutX="75.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="105.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="loadAction" fitHeight="25.0" fitWidth="25.0" layoutX="219.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/load_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="saveAction" fitHeight="25.0" fitWidth="25.0" layoutX="115.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="saveAction" fitHeight="25.0" fitWidth="25.0" layoutX="300.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/save_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="cursorAction" fitHeight="25.0" fitWidth="25.0" layoutX="150.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="cursorAction" fitHeight="25.0" fitWidth="25.0" layoutX="342.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/cursor_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="clearAction" fitHeight="25.0" fitWidth="25.0" layoutX="185.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="clearAction" fitHeight="25.0" fitWidth="25.0" layoutX="385.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/clear_icon.png" />
          </image>
@@ -58,5 +58,10 @@
             </AnchorPane>
         </items>
       </SplitPane>
+      <ImageView fx:id="stopAction" fitHeight="25.0" fitWidth="25.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="105.0">
+         <image>
+            <Image url="@../res/stop_icon.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
