@@ -15,9 +15,7 @@ import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
 import snapmacro.lang.*;
 import snapmacro.ui.SnapEditor;
-import snapmacro.utils.CursorManager;
-import snapmacro.utils.DialogUtils;
-import snapmacro.utils.FileManager;
+import snapmacro.utils.*;
 
 import java.awt.*;
 import java.io.File;
@@ -44,6 +42,7 @@ public class MainController implements Initializable {
     @FXML private ImageView saveAction;
     @FXML private ImageView cursorAction;
     @FXML private ImageView clearAction;
+    @FXML private ImageView themeAction;
 
     @FXML private TextArea resultTextArea;
 
@@ -83,6 +82,7 @@ public class MainController implements Initializable {
         Tooltip.install(saveAction, new Tooltip("Save snap File"));
         Tooltip.install(cursorAction, new Tooltip("Show cursor Position"));
         Tooltip.install(clearAction, new Tooltip("Clear debug TextArea"));
+        Tooltip.install(themeAction, new Tooltip("Change Editor Theme"));
     }
 
     private void setupViewsListeners(){
@@ -94,6 +94,7 @@ public class MainController implements Initializable {
         saveAction.setOnMouseClicked(this::saveSnapScript);
         cursorAction.setOnMouseClicked(this::showCursorPosition);
         clearAction.setOnMouseClicked(this::clearDebugArea);
+        themeAction.setOnMouseClicked(this::changeEditorTheme);
     }
 
     private void setupResultTextArea(){
@@ -230,6 +231,16 @@ public class MainController implements Initializable {
         }else{
             logger.info("Stop showing Cursor position");
             currentFutureTask.cancel(false);
+        }
+    }
+
+    private void changeEditorTheme(MouseEvent event){
+        Settings settings = new Settings();
+        Theme theme = settings.getThemeEnum();
+        if(theme == Theme.DARK){
+            settings.setTheme(Theme.WHITE);
+        }else{
+            settings.setTheme(Theme.DARK);
         }
     }
 

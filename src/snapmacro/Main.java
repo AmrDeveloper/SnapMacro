@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import snapmacro.utils.Settings;
+import snapmacro.utils.Theme;
+import snapmacro.utils.ThemeManager;
+
 
 public class Main extends Application {
 
@@ -15,17 +19,16 @@ public class Main extends Application {
         Scene scene = new Scene(root,600, 400);
 
         //Bind Styles
-        scene.getStylesheets().add("snapmacro/styles/main_style.css");
-        scene.getStylesheets().add("snapmacro/styles/tabs_style.css");
-        scene.getStylesheets().add("snapmacro/styles/editor_style.css");
-        scene.getStylesheets().add("snapmacro/styles/terminal_style.css");
-
         Image appIconImage = new Image(Main.class.getResourceAsStream("res/app_icon.png"));
         primaryStage.setTitle("Snap Macro");
         primaryStage.getIcons().add(appIconImage);
         primaryStage.setOnCloseRequest(event -> System.exit(0));
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        Settings settings = new Settings();
+        ThemeManager.setTheme(scene, Theme.valueOf(settings.getTheme()));
+        settings.setThemeChangeListener(theme -> ThemeManager.setTheme(scene, theme));
     }
 
 

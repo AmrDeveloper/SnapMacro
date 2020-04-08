@@ -7,11 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cssdialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/editor_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/main_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/tabs_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/terminal_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/views/main_view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/snapmacro/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/editor_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/main_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/tabs_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/terminal_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +76,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
         <option value="CSS File" />
       </list>
@@ -110,15 +122,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Software\SnapMacro\src\snapmacro\res" />
-      <recent name="D:\Software\SnapMacro\src\snapmacro\res\icons" />
-      <recent name="D:\Software\SnapMacro\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Software\SnapMacro\src\snapmacro\lang" />
       <recent name="D:\Software\SnapMacro\src\snapmacro\utils" />
       <recent name="D:\Software\SnapMacro\src\snapmacro\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Software\SnapMacro\src\snapmacro\res" />
+      <recent name="D:\Software\SnapMacro\src\snapmacro\res\icons" />
+      <recent name="D:\Software\SnapMacro\lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -244,22 +256,22 @@
       <screen x="0" y="0" width="1280" height="994" />
     </state>
     <state x="346" y="237" key="FileChooserDialogImpl/0.0.1280.994@0.0.1280.994" timestamp="1586192562531" />
-    <state width="1236" height="210" key="GridCell.Tab.0.bottom" timestamp="1586347621146">
+    <state width="1236" height="210" key="GridCell.Tab.0.bottom" timestamp="1586356796047">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="210" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1586347621146" />
-    <state width="1236" height="210" key="GridCell.Tab.0.center" timestamp="1586347621146">
+    <state width="1236" height="210" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1586356796047" />
+    <state width="1236" height="210" key="GridCell.Tab.0.center" timestamp="1586356796047">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="210" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1586347621146" />
-    <state width="1236" height="210" key="GridCell.Tab.0.left" timestamp="1586347621146">
+    <state width="1236" height="210" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1586356796047" />
+    <state width="1236" height="210" key="GridCell.Tab.0.left" timestamp="1586356796047">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="210" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1586347621146" />
-    <state width="1236" height="210" key="GridCell.Tab.0.right" timestamp="1586347621146">
+    <state width="1236" height="210" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1586356796047" />
+    <state width="1236" height="210" key="GridCell.Tab.0.right" timestamp="1586356796047">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1236" height="210" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1586347621146" />
+    <state width="1236" height="210" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1586356796047" />
     <state width="1236" height="323" key="GridCell.Tab.1.bottom" timestamp="1586201905460">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
@@ -276,10 +288,10 @@
       <screen x="0" y="0" width="1280" height="994" />
     </state>
     <state width="1236" height="323" key="GridCell.Tab.1.right/0.0.1280.994@0.0.1280.994" timestamp="1586201905460" />
-    <state x="120" y="70" key="SettingsEditor" timestamp="1586274554449">
+    <state x="120" y="70" key="SettingsEditor" timestamp="1586356758942">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state x="120" y="70" key="SettingsEditor/0.0.1280.994@0.0.1280.994" timestamp="1586274554449" />
+    <state x="120" y="70" key="SettingsEditor/0.0.1280.994@0.0.1280.994" timestamp="1586356758942" />
     <state x="284" y="110" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586249104947">
       <screen x="0" y="0" width="1280" height="994" />
     </state>

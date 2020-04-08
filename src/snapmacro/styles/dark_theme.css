@@ -1,0 +1,114 @@
+/* Main Theme */
+.root {
+    -fx-background-color: #303030;
+}
+
+.split-pane-divider {
+    -fx-background-color: #cccccc;
+    -fx-padding: 1.5px ;
+}
+
+/* Terminal Theme */
+.text-area {
+    text-area-background: #272822 ;
+    -fx-text-fill: gray;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+}
+
+/* Tabs Theme */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane {
+    -fx-tab-min-width: 90px;
+    -fx-background-color: #272822;
+}
+
+.tab {
+    -fx-background-insets: 0 1 0 1, 0, 0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #cccccc;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #3c3c3c;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em;
+}
+
+/* Code Area Theme */
+.lineno {
+    -fx-background-color: #303030;
+}
+
+.styled-text-area{
+    -fx-background-color: #272822;
+}
+
+.styled-text-area .text{
+    -fx-fill: #f8f8f2;
+}
+
+.styled-text-area .text.keyword {
+    -fx-fill: #f82671;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.paren {
+    -fx-fill: #f8f8f2;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.bracket {
+    -fx-fill: #f8f8f2;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.brace {
+    -fx-fill: #f8f8f2;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.string {
+    -fx-fill: #e6da74;
+}
+
+.styled-text-area .text.comment {
+    -fx-fill: #ae81ff;
+}
+
+.styled-text-area .text.operation {
+    -fx-fill: #e17b20;
+}
+
+.styled-text-area .text.number{
+    -fx-fill: #ae81ff;
+}
+
+.paragraph-box:has-caret {
+    -fx-background-color: #1c1c1c99;
+}
+
+.caret {
+    -fx-stroke: #f8f8f2;
+}

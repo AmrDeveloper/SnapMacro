@@ -1,0 +1,114 @@
+/* Main Theme */
+.root {
+    -fx-background-color: #ffffff;
+}
+
+.split-pane-divider {
+    -fx-background-color: #cccccc;
+    -fx-padding: 1.5px ;
+}
+
+/* Terminal Theme */
+.text-area {
+    text-area-background: #ffffff ;
+    -fx-text-fill: black;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+}
+
+/* Tabs Theme */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane {
+    -fx-tab-min-width: 90px;
+    -fx-background-color: #ffffff;
+}
+
+.tab {
+    -fx-background-insets: 0 1 0 1, 0, 0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #eeeeee;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #dddddd;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em;
+}
+
+/* Code Area Theme */
+.lineno {
+    -fx-background-color: #eeeeee;
+}
+
+.styled-text-area{
+    -fx-background-color: #ffffff;
+}
+
+.styled-text-area .text{
+    -fx-fill: #000000;
+}
+
+.styled-text-area .text.keyword {
+    -fx-fill: #2780ff;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.paren {
+    -fx-fill: #505050;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.bracket {
+    -fx-fill: #505050;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.brace {
+    -fx-fill: #505050;
+    -fx-font-weight: bold;
+}
+
+.styled-text-area .text.string {
+    -fx-fill: #4fe629;
+}
+
+.styled-text-area .text.comment {
+    -fx-fill: #cccccc;
+}
+
+.styled-text-area .text.operation {
+    -fx-fill: #e1371f;
+}
+
+.styled-text-area .text.number{
+    -fx-fill: #d684ff;
+}
+
+.paragraph-box:has-caret {
+    -fx-background-color: #cccccc;
+}
+
+.caret {
+    -fx-stroke: #000000;
+}

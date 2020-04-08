@@ -63,5 +63,10 @@
             <Image url="@../res/stop_icon.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="themeAction" fitHeight="25.0" fitWidth="25.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="270.0">
+         <image>
+           <Image url="@../res/theme_icon.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
