@@ -2,17 +2,19 @@ package snapmacro.controllers;
 
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.input.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
+import snapmacro.Main;
 import snapmacro.lang.*;
 import snapmacro.ui.SnapEditor;
 import snapmacro.utils.*;
@@ -44,19 +46,22 @@ public class MainController implements Initializable {
     @FXML private ImageView clearAction;
     @FXML private ImageView themeAction;
 
+    //Views
     @FXML private TextArea resultTextArea;
 
     //Layouts
     @FXML private TabPane scriptTabPane;
+    @FXML private AnchorPane mainLayout;
     @FXML private SplitPane snapLayoutSplitPane;
 
-    private CodeArea currentCodeArea;
-
+    //Utils
     private Logger logger;
     private SnapRuntime snapRuntime;
+    private CodeArea currentCodeArea;
     private Future<?> currentFutureTask;
     private ExecutorService executorService;
 
+    //Constants
     private boolean showCursorPosition = false;
     private static final String DEBUG_TAG = MainController.class.getSimpleName();
     private static final int THREAD_AVAILABLE_NUMBER = Runtime.getRuntime().availableProcessors();
@@ -67,6 +72,9 @@ public class MainController implements Initializable {
         logger = Logger.getLogger(DEBUG_TAG);
         snapRuntime = new SnapRuntime(mStreamListener);
 
+        Stage mainStage = Main.getMainStage();
+        mainStage.addEventFilter(KeyEvent.KEY_PRESSED, mShortcutListener);
+
         setupViewsHover();
         setupViewsListeners();
         setupResultTextArea();
@@ -74,15 +82,15 @@ public class MainController implements Initializable {
     }
 
     private void setupViewsHover(){
-        Tooltip.install(runAction, new Tooltip("Run snap Script"));
-        Tooltip.install(debugAction, new Tooltip("Debug snap Script"));
-        Tooltip.install(restartAction, new Tooltip("Restart snap Script"));
-        Tooltip.install(stopAction, new Tooltip("Stop snap Script"));
-        Tooltip.install(loadAction, new Tooltip("Load snap file"));
-        Tooltip.install(saveAction, new Tooltip("Save snap File"));
-        Tooltip.install(cursorAction, new Tooltip("Show cursor Position"));
-        Tooltip.install(clearAction, new Tooltip("Clear debug TextArea"));
-        Tooltip.install(themeAction, new Tooltip("Change Editor Theme"));
+        Tooltip.install(runAction, new Tooltip("Run snap Script (F5)"));
+        Tooltip.install(debugAction, new Tooltip("Debug snap Script (F6)"));
+        Tooltip.install(restartAction, new Tooltip("Restart snap Script (F7)"));
+        Tooltip.install(stopAction, new Tooltip("Stop snap Script (F8)"));
+        Tooltip.install(loadAction, new Tooltip("Load snap file (F9)"));
+        Tooltip.install(saveAction, new Tooltip("Save snap File (F10)"));
+        Tooltip.install(cursorAction, new Tooltip("Show cursor Position (F11)"));
+        Tooltip.install(clearAction, new Tooltip("Clear debug TextArea (F12)"));
+        Tooltip.install(themeAction, new Tooltip("Change Editor Theme (F1)"));
     }
 
     private void setupViewsListeners(){
@@ -146,7 +154,7 @@ public class MainController implements Initializable {
         }
     }
 
-    private void runSnapScript(MouseEvent event){
+    private void runSnapScript(MouseEvent...event){
         resultTextArea.clear();
         if(currentCodeArea == null){
             DialogUtils.createErrorDialog("Error Message",
@@ -158,7 +166,7 @@ public class MainController implements Initializable {
         currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
     }
 
-    private void runSnapScriptDebugger(MouseEvent event){
+    private void runSnapScriptDebugger(MouseEvent...event){
         resultTextArea.clear();
         if(currentCodeArea == null){
             DialogUtils.createErrorDialog("Error Message",
@@ -170,7 +178,7 @@ public class MainController implements Initializable {
         currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
     }
 
-    private void restartSnapScript(MouseEvent event){
+    private void restartSnapScript(MouseEvent...event){
         resultTextArea.clear();
         if(currentCodeArea == null){
             DialogUtils.createErrorDialog("Error Message",
@@ -181,12 +189,12 @@ public class MainController implements Initializable {
         currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
     }
 
-    private void loadSnapScript(MouseEvent event){
+    private void loadSnapScript(MouseEvent...event){
         File snapScript = FileManager.openSourceFile("Load Snap Script");
         openSnapScriptNewTab(snapScript);
     }
 
-    private void stopSnapScript(MouseEvent event){
+    private void stopSnapScript(MouseEvent...event){
         if(currentCodeArea == null){
             DialogUtils.createErrorDialog("Error Message",
                     null, "Select Snap script");
@@ -195,7 +203,7 @@ public class MainController implements Initializable {
         currentFutureTask.cancel(true);
     }
 
-    private void saveSnapScript(MouseEvent event){
+    private void saveSnapScript(MouseEvent...event){
         int selectedIndex = scriptTabPane.getSelectionModel().getSelectedIndex();
         if(selectedIndex == -1){
             DialogUtils.createErrorDialog("Error Message",
@@ -209,7 +217,7 @@ public class MainController implements Initializable {
         FileManager.updateContent(new File(scriptFilePath), scriptText);
     }
 
-    private void showCursorPosition(MouseEvent event){
+    private void showCursorPosition(MouseEvent...event){
         showCursorPosition = !showCursorPosition;
         if(showCursorPosition) {
             logger.info("Start showing Cursor position");
@@ -234,7 +242,7 @@ public class MainController implements Initializable {
         }
     }
 
-    private void changeEditorTheme(MouseEvent event){
+    private void changeEditorTheme(MouseEvent...event){
         Settings settings = new Settings();
         Theme theme = settings.getThemeEnum();
         if(theme == Theme.DARK){
@@ -244,7 +252,7 @@ public class MainController implements Initializable {
         }
     }
 
-    private void clearDebugArea(MouseEvent event){
+    private void clearDebugArea(MouseEvent...event){
         resultTextArea.clear();
     }
 
@@ -253,6 +261,39 @@ public class MainController implements Initializable {
             if (newVal.getText().endsWith(".ss")) {
                 currentCodeArea = (CodeArea) ((Parent) newVal.getContent()).getChildrenUnmodifiable().get(0);
             }
+        }
+    };
+
+    private final EventHandler<KeyEvent> mShortcutListener = (event) -> {
+        KeyCode keyCode = event.getCode();
+        switch (keyCode){
+            case F1:
+                changeEditorTheme();
+                break;
+            case F5:
+                runSnapScript();
+                break;
+            case F6:
+                runSnapScriptDebugger();
+                break;
+            case F7:
+                restartSnapScript();
+                break;
+            case F8:
+                stopSnapScript();
+                break;
+            case F9:
+                loadSnapScript();
+                break;
+            case F10:
+                saveSnapScript();
+                break;
+            case F11:
+                showCursorPosition();
+                break;
+            case F12:
+                clearDebugArea();
+                break;
         }
     };
 

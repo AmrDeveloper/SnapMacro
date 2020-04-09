@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import snapmacro.utils.Settings;
 import snapmacro.utils.Theme;
@@ -13,8 +14,11 @@ import snapmacro.utils.ThemeManager;
 
 public class Main extends Application {
 
+    private static Stage mainStage;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+        mainStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("views/main_view.fxml"));
         Scene scene = new Scene(root,600, 400);
 
@@ -31,8 +35,11 @@ public class Main extends Application {
         settings.setThemeChangeListener(theme -> ThemeManager.setTheme(scene, theme));
     }
 
-
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static Stage getMainStage(){
+        return mainStage;
     }
 }
