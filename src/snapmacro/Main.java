@@ -5,12 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import snapmacro.utils.AppConst;
 import snapmacro.utils.Settings;
 import snapmacro.utils.Theme;
 import snapmacro.utils.ThemeManager;
-
 
 public class Main extends Application {
 
@@ -20,12 +19,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         mainStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("views/main_view.fxml"));
-        Scene scene = new Scene(root,600, 400);
+        Scene scene = new Scene(root, AppConst.MIN_WIDTH, AppConst.MIN_HEIGHT);
 
         //Bind Styles
         Image appIconImage = new Image(Main.class.getResourceAsStream("res/app_icon.png"));
-        primaryStage.setTitle("Snap Macro");
+        primaryStage.setTitle(AppConst.NAME);
         primaryStage.getIcons().add(appIconImage);
+        primaryStage.setMinWidth(AppConst.MIN_WIDTH);
+        primaryStage.setMinHeight(AppConst.MIN_HEIGHT);
         primaryStage.setOnCloseRequest(event -> System.exit(0));
         primaryStage.setScene(scene);
         primaryStage.show();
