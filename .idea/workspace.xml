@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SnapMacro_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SnapMacro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SnapMacro.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/META-INF/SnapMacro.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SnapParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SnapParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/StatementVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/StatementVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/TokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +22,10 @@
   </component>
   <component name="ProjectId" id="1aJYj6zxIJtKBhMVTJAZTrueZhu" />
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/META-INF" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
