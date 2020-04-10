@@ -10,7 +10,7 @@ function closeButton {
   mouse click left
 }
 
-repeat(10) {
+repeat(3) {
    connectButton()
    sleep 2000
    closeButton()

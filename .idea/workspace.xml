@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="" />
+    <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/Linkedin.ss" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Linkedin.ss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/Screenshot.ss" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Screenshot.ss" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
