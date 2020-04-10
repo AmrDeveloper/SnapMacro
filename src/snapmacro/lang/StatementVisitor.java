@@ -9,7 +9,8 @@ public interface StatementVisitor<R> {
     R visit(RepeatStatement statement);
     R visit(BlockStatement statement);
 
-    R visit(MouseStatement statement);
+    R visit(MousePointStatement statement);
+    R visit(MouseClickStatement statement);
     R visit(KeyboardStatement statement);
     R visit(ScreenStatement statement);
     R visit(EchoStatement statement);

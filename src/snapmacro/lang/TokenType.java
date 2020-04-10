@@ -1,7 +1,7 @@
 package snapmacro.lang;
 
 public enum TokenType {
-    MOUSE, KEYBOARD, SCREEN,
+    MOUSE, KEYBOARD, SCREEN, POINT, CLICK, LEFT, RIGHT,
 
     EQUAL,EQUAL_EQUAL, GREATER, LESS, GREATER_EQUAL, LESS_EQUAL,
     BANG_EQUAL, BANG,

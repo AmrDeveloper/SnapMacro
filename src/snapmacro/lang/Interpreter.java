@@ -217,30 +217,27 @@ public class Interpreter implements
     }
 
     @Override
-    public Void visit(MouseStatement statement) {
+    public Void visit(MousePointStatement statement) {
         showDebugMessage("Mouse Event", DebugType.WARN);
-        String order = statement.getOrder().getLexeme();
         List<Expression> values = statement.getValue();
-        switch (order) {
-            case "point":
-                Expression xValue = values.get(0);
-                Expression yValue = values.get(1);
 
-                int xValNum = (int) evaluate(xValue);
-                int yValNum = (int) evaluate(yValue);
+        Expression xValue = values.get(0);
+        Expression yValue = values.get(1);
 
-                robotController.setCursorPosition(xValNum, yValNum);
-                break;
-            case "click":
-                Expression button = values.get(0);
-                String buttonName = String.valueOf(evaluate(button));
+        int xValNum = ((Double) evaluate(xValue)).intValue();
+        int yValNum = ((Double) evaluate(yValue)).intValue();
 
-                if (buttonName.equals("right")) {
-                    robotController.mouseRightClick();
-                } else {
-                    robotController.mouseLeftClick();
-                }
-                break;
+        robotController.setCursorPosition(xValNum, yValNum);
+        return null;
+    }
+
+    @Override
+    public Void visit(MouseClickStatement statement) {
+        String order = statement.getValue().getLexeme();
+        if (order.equals("right")) {
+            robotController.mouseRightClick();
+        } else {
+            robotController.mouseLeftClick();
         }
         return null;
     }

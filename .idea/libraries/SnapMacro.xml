@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SnapMacro">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jar/SnapMacro.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

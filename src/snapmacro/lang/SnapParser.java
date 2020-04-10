@@ -2,7 +2,6 @@ package snapmacro.lang;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static snapmacro.lang.SnapRuntime.error;
@@ -66,17 +65,16 @@ public class SnapParser {
     }
 
     private Statement mouseStatement(){
-        //mouse point 1 1
+        //mouse point or click
         Token order = consume(IDENTIFIER, "Expect Mouse Instruction.");
         if(order.getLexeme().equals("point")){
             Expression xValue = expression();
             Expression yValue = expression();
             List<Expression> values = Arrays.asList(xValue, yValue);
-            return new MouseStatement(order, values);
+            return new MousePointStatement(values);
         }else{
-            Expression value = expression();
-            List<Expression> values = Collections.singletonList(value);
-            return new MouseStatement(order, values);
+            Token value = advance();
+            return new MouseClickStatement(value);
         }
     }
 
