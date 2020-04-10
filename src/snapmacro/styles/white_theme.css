@@ -70,7 +70,7 @@
 }
 
 .styled-text-area .text.keyword {
-    -fx-fill: #2780ff;
+    -fx-fill: #170ea0;
     -fx-font-weight: bold;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .styled-text-area .text.comment {
-    -fx-fill: #cccccc;
+    -fx-fill: #797979;
 }
 
 .styled-text-area .text.operation {
