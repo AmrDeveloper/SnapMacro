@@ -163,7 +163,10 @@ public class MainController implements Initializable {
         }
         String scriptText = currentCodeArea.getText();
         snapRuntime.removeDebuggerListener();
-        currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
+        currentFutureTask = executorService.submit(() -> {
+            snapRuntime.runSnapCode(scriptText);
+            Platform.runLater(() -> resultTextArea.appendText("\nScript is executed\n"));
+        });
     }
 
     private void runSnapScriptDebugger(MouseEvent...event){
@@ -175,7 +178,10 @@ public class MainController implements Initializable {
         }
         String scriptText = currentCodeArea.getText();
         snapRuntime.setDebuggerListener(mDebuggerListener);
-        currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
+        currentFutureTask = executorService.submit(() -> {
+            snapRuntime.runSnapCode(scriptText);
+            Platform.runLater(() -> resultTextArea.appendText("\nScript is executed\n"));
+        });
     }
 
     private void restartSnapScript(MouseEvent...event){
@@ -186,7 +192,10 @@ public class MainController implements Initializable {
             return;
         }
         String scriptText = currentCodeArea.getText();
-        currentFutureTask = executorService.submit(() -> snapRuntime.runSnapCode(scriptText));
+        currentFutureTask = executorService.submit(() -> {
+            snapRuntime.runSnapCode(scriptText);
+            Platform.runLater(() -> resultTextArea.appendText("\nScript is executed\n"));
+        });
     }
 
     private void loadSnapScript(MouseEvent...event){
