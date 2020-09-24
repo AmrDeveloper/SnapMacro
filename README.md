@@ -4,7 +4,9 @@ Free and open source Cross-platform bot creator with a new scripting language ca
 snap to interact with mouse, keyboard and screen using snap scripting language 
 
 Snap language has many features to make it easy to implement your bot
- 
+  
+<img src="screenshots/screen1.PNG" width="48%"> <img src="screenshots/screen2.PNG" width="48%"> 
+
 ### Features:
 - variables,
 - conditions,
@@ -13,8 +15,7 @@ Snap language has many features to make it easy to implement your bot
 
 For examples take a look at example directory
 
-### Screenshots
+### How to use?
+To run SnapMacro Jar you need to install JDK 8
+Then You can download SnapMacro from [Here](https://github.com/AmrDeveloper/SnapMacro/raw/master/jar/SnapMacro.jar)
 
-<img src="screenshots/screen1.PNG" width="600"> 
-
-<img src="screenshots/screen2.PNG" width="600"> 
