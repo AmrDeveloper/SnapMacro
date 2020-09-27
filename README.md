@@ -19,3 +19,41 @@ For examples take a look at example directory
 To run SnapMacro Jar you need to install JDK 8
 Then You can download SnapMacro from [Here](https://github.com/AmrDeveloper/SnapMacro/raw/master/jar/SnapMacro.jar)
 
+### Instructions
+
+#### Perform right or left mouse click
+`
+mouse click (left | right)
+`
+
+#### Move mouse cursor to x, y position
+`
+mouse point x y
+`
+
+#### Sleep execution s milliseconds
+`
+sleep s
+`
+
+#### Execute the body statements n times
+```
+repeat(n) {
+   
+}
+```
+
+#### Function decleration to make easy to call or repeat instructions
+```
+function name {
+
+}
+```
+#### Function call to execute function instructions
+`
+name()
+`
+#### Comments used to make your script more readable
+`
+#todo
+`
