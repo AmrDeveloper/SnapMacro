@@ -23,7 +23,7 @@ public class SnapLexer {
         keywords.put("screen", SCREEN);
         keywords.put("keyboard", KEYBOARD);
 
-        keywords.put("function", FUNCTION);
+        keywords.put("func", FUNCTION);
         keywords.put("echo", ECHO);
         keywords.put("if", IF);
         keywords.put("true", TRUE);
@@ -36,7 +36,7 @@ public class SnapLexer {
         keywords.put("or", OR);
         keywords.put("xor", XOR);
 
-        keywords.put("sleep", SLEEP);
+        keywords.put("delay", SLEEP);
         keywords.put("restart", RESTART);
         keywords.put("exit", EXIT);
     }

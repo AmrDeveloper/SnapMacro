@@ -4,5 +4,5 @@ repeat(3) {
    screen capture "C:\Users\AmrDeveloper\Desktop\screenshots"
 
    #Wait 2s
-   sleep 2000
+   delay 2000
 }
