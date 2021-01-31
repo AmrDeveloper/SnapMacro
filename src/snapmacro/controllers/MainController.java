@@ -133,6 +133,8 @@ public class MainController implements Initializable {
     }
 
     private void openSnapScriptNewTab(File snapFile){
+        if(snapFile == null || snapFile.getName().isEmpty()) return;
+
         Tab snapScriptTab = new Tab(snapFile.getName());
         snapScriptTab.setUserData(snapFile.getPath());
 
