@@ -32,6 +32,11 @@ public class FileManager {
     public static File openSourceFile(String title) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
+
+        FileChooser.ExtensionFilter snapExtension =
+                new FileChooser.ExtensionFilter("Snap Script", "*.ss");
+        fileChooser.getExtensionFilters().add(snapExtension);
+
         return fileChooser.showOpenDialog(null);
     }
 
@@ -41,7 +46,7 @@ public class FileManager {
         return chooser.showDialog(null);
     }
 
-    public static File saveSourceFile(String title) {
+    public static File saveAsSourceFile(String title) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
         return fileChooser.showSaveDialog(null);
