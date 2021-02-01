@@ -5,11 +5,43 @@
       <artifact name="SnapMacro:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/Screenshot.ss" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Screenshot.ss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SnapLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SnapLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/RobotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/RobotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapParser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/ui/SnapSyntax.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/ui/SnapSyntax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/RobotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/RobotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SnapParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SnapParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/ui/SnapSyntax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/ui/SnapSyntax.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +66,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -41,7 +74,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1aJYj6zxIJtKBhMVTJAZTrueZhu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/META-INF" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -68,22 +106,69 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="" />
+      <created>1612134578666</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612134578666</updated>
+      <workItem from="1612134581566" duration="608000" />
+      <workItem from="1612137283606" duration="90000" />
+      <workItem from="1612137570214" duration="1135000" />
+      <workItem from="1612185314238" duration="2613000" />
+      <workItem from="1612187966470" duration="916000" />
+      <workItem from="1612194002237" duration="282000" />
+    </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ss" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="REGEX" value="true" />
+                  <option name="MATCH_CASE" value="true" />
+                </TextFilterSettings>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1237" height="195" key="GridCell.Tab.0.bottom" timestamp="1612194107851">
+      <screen x="0" y="0" width="1280" height="994" />
+    </state>
+    <state width="1237" height="195" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1612194107851" />
+    <state width="1237" height="195" key="GridCell.Tab.0.center" timestamp="1612194107851">
+      <screen x="0" y="0" width="1280" height="994" />
+    </state>
+    <state width="1237" height="195" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1612194107851" />
+    <state width="1237" height="195" key="GridCell.Tab.0.left" timestamp="1612194107850">
+      <screen x="0" y="0" width="1280" height="994" />
+    </state>
+    <state width="1237" height="195" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1612194107850" />
+    <state width="1237" height="195" key="GridCell.Tab.0.right" timestamp="1612194107851">
+      <screen x="0" y="0" width="1280" height="994" />
+    </state>
+    <state width="1237" height="195" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1612194107851" />
   </component>
 </project>

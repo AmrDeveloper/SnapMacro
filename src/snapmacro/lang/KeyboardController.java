@@ -11,8 +11,7 @@ public class KeyboardController {
         mCursorRobot = robot;
     }
 
-    public void keyboardPressKey(String key){
-        KeyStroke keyStroke = KeyStroke.getKeyStroke(key);
-        mCursorRobot.keyPress(keyStroke.getKeyCode());
+    public void keyboardPressKey(int keyValue){
+        mCursorRobot.keyPress(keyValue);
     }
 }

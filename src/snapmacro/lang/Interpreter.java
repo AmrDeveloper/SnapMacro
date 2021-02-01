@@ -234,7 +234,7 @@ public class Interpreter implements
     @Override
     public Void visit(MouseClickStatement statement) {
         String order = statement.getValue().getLexeme();
-        if (order.equals("right")) {
+        if ("right".equals(order)) {
             robotController.mouseRightClick();
         } else {
             robotController.mouseLeftClick();
@@ -246,10 +246,12 @@ public class Interpreter implements
     public Void visit(KeyboardStatement statement) {
         showDebugMessage("Keyboard Event", DebugType.WARN);
         String order = statement.getOrder().getLexeme();
-        String value = statement.getValue().getLexeme();
-        if (order.equals("press")) {
-            robotController.keyboardPressKey(value.toUpperCase());
-        } else {
+
+        if ("press".equals(order)) {
+            KeyboardKey key = statement.getKeyboardKey();
+            robotController.keyboardPressKey(key.getKeyValue());
+        }
+        else {
             showDebugMessage("Invalid keyboard instruction", DebugType.ERROR);
             throw new ExitEvent();
         }
@@ -261,7 +263,7 @@ public class Interpreter implements
         showDebugMessage("Screen Event", DebugType.WARN);
         String order = statement.getOrder().getLexeme();
         String path = statement.getValue().getLexeme();
-        if (order.equals("capture")) {
+        if ("capture".equals(order)) {
             path = path.replaceAll("\"", "");
             robotController.captureScreen(path);
         } else {
@@ -293,8 +295,9 @@ public class Interpreter implements
         }
 
         int counter = (int) Double.parseDouble(value.toString());
+        Statement body = statement.getLoopBody();
         for (int i = 0; i < counter; i++) {
-            execute(statement.getLoopBody());
+            execute(body);
         }
         this.environment = previous;
         return null;

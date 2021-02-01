@@ -2,20 +2,20 @@ package snapmacro.lang;
 
 public class KeyboardStatement extends Statement {
 
-    private Token  order;
-    private Token  value;
+    private final Token order;
+    private final KeyboardKey keyboardKey;
 
-    public KeyboardStatement(Token  order, Token  value){
+    public KeyboardStatement(Token order, KeyboardKey keyboardKey) {
         this.order = order;
-        this.value = value;
+        this.keyboardKey = keyboardKey;
     }
 
-    public Token  getOrder() {
+    public Token getOrder() {
         return order;
     }
 
-    public Token  getValue() {
-        return value;
+    public KeyboardKey getKeyboardKey() {
+        return keyboardKey;
     }
 
     @Override

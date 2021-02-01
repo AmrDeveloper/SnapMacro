@@ -5,10 +5,10 @@ import java.util.regex.Pattern;
 public class SnapSyntax {
 
     public static final String[] KEYWORDS = new String[]{
-            "var", "function", "mouse", "keyword", "screen", "capture",
+            "var", "func", "mouse", "keyboard", "screen", "capture",
             "point", "click", "press", "right", "left",
 
-            "true", "false", "while", "if", "repeat", "exit", "sleep", "echo",
+            "true", "false", "while", "if", "repeat", "exit", "delay", "echo",
             "or", "xor", "and"
     };
 
@@ -22,7 +22,7 @@ public class SnapSyntax {
     private static final String NUMBERS_PATTERN = "[0-9]+";
 
     public static final Pattern PATTERN = Pattern.compile(
-            "(?<KEYWORD>" + KEYWORD_PATTERN + ")"
+                     "(?<KEYWORD>" + KEYWORD_PATTERN + ")"
                     + "|(?<PAREN>" + PAREN_PATTERN + ")"
                     + "|(?<BRACE>" + BRACE_PATTERN + ")"
                     + "|(?<BRACKET>" + BRACKET_PATTERN + ")"

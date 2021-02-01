@@ -2,6 +2,7 @@ package snapmacro.lang;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 
 import static snapmacro.lang.SnapRuntime.error;
@@ -13,22 +14,24 @@ public class SnapParser {
     private final List<Token> tokens;
     private DebuggerListener mDebuggerListener;
 
-    public SnapParser(List<Token> tokens){
+    private static final KeyboardKey[] keyboardKeys = KeyboardKey.values();
+
+    public SnapParser(List<Token> tokens) {
         this.tokens = tokens;
     }
 
-    public SnapParser(List<Token> tokens, DebuggerListener debugger){
+    public SnapParser(List<Token> tokens, DebuggerListener debugger) {
         this.tokens = tokens;
         this.mDebuggerListener = debugger;
     }
 
     public List<Statement> parse() {
         List<Statement> statements = new ArrayList<>();
-        try{
+        try {
             while (!isAtEnd()) {
                 statements.add(declaration());
             }
-        }catch (ExitEvent e){
+        } catch (ExitEvent e) {
             showDebugMessage("Exit parser", DebugType.ERROR);
         }
         return statements;
@@ -64,33 +67,47 @@ public class SnapParser {
         return new ExpressionStatement(expr);
     }
 
-    private Statement mouseStatement(){
+    private Statement mouseStatement() {
         //mouse point or click
         Token order = consume(IDENTIFIER, "Expect Mouse Instruction.");
-        if(order.getLexeme().equals("point")){
+        if (order.getLexeme().equals("point")) {
             Expression xValue = expression();
             Expression yValue = expression();
             List<Expression> values = Arrays.asList(xValue, yValue);
             return new MousePointStatement(values);
-        }else{
+        } else {
             Token value = advance();
             return new MouseClickStatement(value);
         }
     }
 
-    private Statement screenStatement(){
+    private Statement screenStatement() {
         Token order = consume(IDENTIFIER, "Expect Screen Instruction.");
         Token value = consume(STRING, "Expect Directory Path for screenshots.");
         return new ScreenStatement(order, value);
     }
 
-    private Statement keyboardStatement(){
+    private Statement keyboardStatement() {
         Token order = consume(IDENTIFIER, "Expect Keyboard Instruction.");
         Token value = consume(IDENTIFIER, "Expect Keyboard Value.");
-        return new KeyboardStatement(order, value);
+
+        boolean isKeyFound = false;
+        for(KeyboardKey key : keyboardKeys) {
+            if(key.getKeyName().equals(value.getLexeme())) {
+                isKeyFound = true;
+                break;
+            }
+        }
+
+        if (!isKeyFound) {
+            showDebugMessage("UnSupported Keyboard key", DebugType.ERROR);
+            throw new ExitEvent();
+        }
+
+        return new KeyboardStatement(order, KeyboardKey.valueOf(value.getLexeme()));
     }
 
-    private Statement ifStatement(){
+    private Statement ifStatement() {
         consume(LEFT_PAREN, "Expect '(' after 'if'.");
         Expression condition = expression();
         consume(RIGHT_PAREN, "Expect ')' after if condition.");
@@ -103,7 +120,7 @@ public class SnapParser {
         return new IfStatement(condition, thenBranch);
     }
 
-    private Statement whileStatement(){
+    private Statement whileStatement() {
         consume(LEFT_PAREN, "Expect '(' after 'while'.");
         Expression condition = expression();
         consume(RIGHT_PAREN, "Expect ')' after while condition.");
@@ -111,22 +128,22 @@ public class SnapParser {
         return new WhileStatement(condition, loopBody);
     }
 
-    private Statement repeatStatement(){
+    private Statement repeatStatement() {
         consume(LEFT_PAREN, "Expect '(' after 'repeat'.");
         Expression value = expression();
         consume(RIGHT_PAREN, "Expect ')' after repeat value.");
         Statement loopBody = statement();
-        return new RepeatStatement(value,loopBody);
+        return new RepeatStatement(value, loopBody);
     }
 
-    private Statement funcDeclaration(){
+    private Statement funcDeclaration() {
         Token name = consume(IDENTIFIER, "Expect function name.");
         consume(LEFT_BRACE, "Expect '{' before function body.");
         List<Statement> body = block();
         return new FunctionStatement(name, body);
     }
 
-    private Statement varDeclaration(){
+    private Statement varDeclaration() {
         Token name = consume(IDENTIFIER, "Expect variable name.");
 
         Expression initializer = null;
@@ -137,19 +154,19 @@ public class SnapParser {
         return new VarStatement(name, initializer);
     }
 
-    private Statement echoStatement(){
+    private Statement echoStatement() {
         consume(LEFT_PAREN, "Expect '(' after 'while'.");
         Expression value = expression();
         consume(RIGHT_PAREN, "Expect ')' after while condition.");
         return new EchoStatement(value);
     }
 
-    private Statement sleepStatement(){
+    private Statement sleepStatement() {
         Expression value = expression();
         return new SleepStatement(value);
     }
 
-    private Statement exitStatement(){
+    private Statement exitStatement() {
         return new ExitStatement();
     }
 
@@ -317,15 +334,15 @@ public class SnapParser {
         }
     }
 
-    public void setDebuggerListener(DebuggerListener listener){
+    public void setDebuggerListener(DebuggerListener listener) {
         mDebuggerListener = listener;
     }
 
-    public void removeDebuggerListener(){
+    public void removeDebuggerListener() {
         mDebuggerListener = null;
     }
 
-    private void showDebugMessage(String message, DebugType type){
+    private void showDebugMessage(String message, DebugType type) {
         ListenerMessage.showDebugMessage(mDebuggerListener, message, type);
     }
 }
