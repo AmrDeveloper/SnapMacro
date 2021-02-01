@@ -4,6 +4,34 @@ import java.awt.event.KeyEvent;
 
 enum KeyboardKey {
 
+    // Characters A to Z
+    CHAR_A("A", KeyEvent.VK_A),
+    CHAR_B("B", KeyEvent.VK_B),
+    CHAR_C("C", KeyEvent.VK_C),
+    CHAR_D("D", KeyEvent.VK_D),
+    CHAR_E("E", KeyEvent.VK_E),
+    CHAR_F("F", KeyEvent.VK_F),
+    CHAR_G("G", KeyEvent.VK_G),
+    CHAR_H("H", KeyEvent.VK_H),
+    CHAR_I("I", KeyEvent.VK_I),
+    CHAR_J("J", KeyEvent.VK_J),
+    CHAR_K("K", KeyEvent.VK_K),
+    CHAR_L("L", KeyEvent.VK_L),
+    CHAR_M("M", KeyEvent.VK_M),
+    CHAR_N("N", KeyEvent.VK_N),
+    CHAR_O("O", KeyEvent.VK_O),
+    CHAR_P("P", KeyEvent.VK_P),
+    CHAR_Q("Q", KeyEvent.VK_Q),
+    CHAR_R("R", KeyEvent.VK_R),
+    CHAR_S("S", KeyEvent.VK_S),
+    CHAR_T("T", KeyEvent.VK_T),
+    CHAR_U("U", KeyEvent.VK_U),
+    CHAR_V("V", KeyEvent.VK_V),
+    CHAR_W("W", KeyEvent.VK_W),
+    CHAR_X("X", KeyEvent.VK_X),
+    CHAR_Y("Y", KeyEvent.VK_Y),
+    CHAR_Z("Z", KeyEvent.VK_Z),
+
     // Digit keys
     DIGIT_0("DIGIT_0", KeyEvent.VK_0),
     DIGIT_1("DIGIT_1", KeyEvent.VK_1),
@@ -16,7 +44,7 @@ enum KeyboardKey {
     DIGIT_8("DIGIT_8", KeyEvent.VK_8),
     DIGIT_9("DIGIT_9", KeyEvent.VK_9),
 
-    // Virtual key
+    // Virtual keys
     ENTER("ENTER", KeyEvent.VK_ENTER),
     BACK_SPACE("BACK_SPACE", KeyEvent.VK_BACK_SPACE),
     CAPS_LOCK("CAPS_LOCK", KeyEvent.VK_CAPS_LOCK),
@@ -30,6 +58,12 @@ enum KeyboardKey {
     PAGE_DOWN("PAGE_DOWN", KeyEvent.VK_PAGE_DOWN),
     HOME("HOME", KeyEvent.VK_HOME),
     END("END", KeyEvent.VK_END),
+
+    // Arrows keys
+    UP("UP", KeyEvent.VK_UP),
+    DOWN("DOWN", KeyEvent.VK_DOWN),
+    RIGHT("RIGHT", KeyEvent.VK_RIGHT),
+    LEFT("LEFT", KeyEvent.VK_LEFT),
 
     // F Keys
     F1("F1", KeyEvent.VK_F1),
