@@ -1,10 +1,10 @@
 package snapmacro.lang;
 
-public class MouseClickStatement extends Statement{
+public class MouseWheelStatement extends Statement {
 
     private final Token value;
 
-    public MouseClickStatement(Token value){
+    public MouseWheelStatement(Token value){
         this.value = value;
     }
 

@@ -22,6 +22,11 @@ public class MouseController {
         mCursorRobot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 
+    public void mouseWheels(int value) {
+        System.out.println(value);
+        mCursorRobot.mouseWheel(value);
+    }
+
     public Point getPosition() {
         return MouseInfo.getPointerInfo().getLocation();
     }

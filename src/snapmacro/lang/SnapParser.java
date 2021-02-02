@@ -68,16 +68,22 @@ public class SnapParser {
     }
 
     private Statement mouseStatement() {
-        //mouse point or click
         Token order = consume(IDENTIFIER, "Expect Mouse Instruction.");
-        if (order.getLexeme().equals("point")) {
+        String action = order.getLexeme();
+        if ("point".equals(action)) {
             Expression xValue = expression();
             Expression yValue = expression();
             List<Expression> values = Arrays.asList(xValue, yValue);
             return new MousePointStatement(values);
-        } else {
+        } else if ("click".equals(action)) {
             Token value = advance();
             return new MouseClickStatement(value);
+        } else if ("wheel".equals(action)) {
+            Token value = advance();
+            return new MouseWheelStatement(value);
+        } else {
+            showDebugMessage("UnSupported Mouse action", DebugType.ERROR);
+            throw new ExitEvent();
         }
     }
 
@@ -92,8 +98,8 @@ public class SnapParser {
         Token value = consume(IDENTIFIER, "Expect Keyboard Value.");
 
         boolean isKeyFound = false;
-        for(KeyboardKey key : keyboardKeys) {
-            if(key.getKeyName().equals(value.getLexeme())) {
+        for (KeyboardKey key : keyboardKeys) {
+            if (key.getKeyName().equals(value.getLexeme())) {
                 isKeyFound = true;
                 break;
             }

@@ -6,7 +6,7 @@ public class SnapSyntax {
 
     public static final String[] KEYWORDS = {
             "var", "func", "mouse", "keyboard", "screen", "capture",
-            "point", "click", "press", "release", "right", "left",
+            "point", "click", "press", "wheel", "release", "right", "left",
 
             "true", "false", "while", "if", "repeat", "exit", "delay", "echo",
             "or", "xor", "and"

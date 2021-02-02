@@ -33,6 +33,12 @@ mouse click (left | right)
 mouse point x y
 `
 
+#### Mouse wheel to control wheel and scroll down or up
+```
+mouse wheel 10
+mouse wheel -10
+```
+
 #### Keyboard
 
 #### Keyboard press key

@@ -218,7 +218,7 @@ public class Interpreter implements
 
     @Override
     public Void visit(MousePointStatement statement) {
-        showDebugMessage("Mouse Event", DebugType.WARN);
+        showDebugMessage("Mouse Point Event", DebugType.WARN);
         List<Expression> values = statement.getValue();
 
         Expression xValue = values.get(0);
@@ -233,11 +233,27 @@ public class Interpreter implements
 
     @Override
     public Void visit(MouseClickStatement statement) {
+        showDebugMessage("Mouse Click Event", DebugType.WARN);
         String order = statement.getValue().getLexeme();
         if ("right".equals(order)) {
             robotController.mouseRightClick();
         } else {
             robotController.mouseLeftClick();
+        }
+        return null;
+    }
+
+    @Override
+    public Void visit(MouseWheelStatement statement) {
+        showDebugMessage("Mouse Wheel Event", DebugType.WARN);
+        Token value = statement.getValue();
+        if(value.getType() == TokenType.NUMBER) {
+            Double dValue = (Double) value.getLiteral();
+            int iValue = dValue.intValue();
+            robotController.mouseWheels(iValue);
+        } else {
+            showDebugMessage("Invalid MouseWheels Value", DebugType.ERROR);
+            throw new ExitEvent();
         }
         return null;
     }
@@ -283,6 +299,7 @@ public class Interpreter implements
 
     @Override
     public Void visit(RepeatStatement statement) {
+        showDebugMessage("Repeat Event", DebugType.WARN);
         Environment repeatEnvironment = new Environment(environment);
         Environment previous = this.environment;
         this.environment = repeatEnvironment;

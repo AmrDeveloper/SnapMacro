@@ -55,6 +55,10 @@ public class RobotController {
         mMouseController.mouseLeftClick();
     }
 
+    public void mouseWheels(int value) {
+        mMouseController.mouseWheels(value);
+    }
+
     public void keyboardPressKey(int key) {
         mKeyboardController.keyboardPressKey(key);
     }
