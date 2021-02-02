@@ -1,4 +1,4 @@
-## Snap Macro 1.0.0
+****## Snap Macro 1.0.0
 
 Free and open source Cross-platform bot creator with a new scripting language called 
 snap to interact with mouse, keyboard and screen using snap scripting language 

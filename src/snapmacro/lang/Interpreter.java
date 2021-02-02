@@ -19,7 +19,7 @@ public class Interpreter implements
     public void interpret(List<Statement> statements) {
         showDebugMessage("Start Interpreter", DebugType.WARN);
         try {
-            for(Statement statement : statements){
+            for (Statement statement : statements) {
                 execute(statement);
             }
         } catch (ExitEvent event) {
@@ -139,9 +139,9 @@ public class Interpreter implements
 
     @Override
     public Object visit(Variable expr) {
-        try{
+        try {
             return lookUpVariable(expr.getName(), expr);
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             showDebugMessage(e.getMessage(), DebugType.ERROR);
         }
         throw new ExitEvent();
@@ -250,8 +250,10 @@ public class Interpreter implements
         if ("press".equals(order)) {
             KeyboardKey key = statement.getKeyboardKey();
             robotController.keyboardPressKey(key.getKeyValue());
-        }
-        else {
+        } else if ("release".equals(order)) {
+            KeyboardKey key = statement.getKeyboardKey();
+            robotController.keyboardReleaseKey(key.getKeyValue());
+        } else {
             showDebugMessage("Invalid keyboard instruction", DebugType.ERROR);
             throw new ExitEvent();
         }
@@ -376,7 +378,7 @@ public class Interpreter implements
 
     private void checkNumberOperand(Token operator, Object operand) {
         if (operand instanceof Double) return;
-        showDebugMessage("Operand must be a number." , DebugType.ERROR);
+        showDebugMessage("Operand must be a number.", DebugType.ERROR);
         throw new ExitEvent();
     }
 
@@ -416,27 +418,27 @@ public class Interpreter implements
         }
     }
 
-    public void setStreamListener(StreamListener listener){
+    public void setStreamListener(StreamListener listener) {
         mStreamListener = listener;
     }
 
-    public void removeStreamListener(){
+    public void removeStreamListener() {
         mStreamListener = null;
     }
 
-    public void setDebuggerListener(DebuggerListener listener){
+    public void setDebuggerListener(DebuggerListener listener) {
         mDebuggerListener = listener;
     }
 
-    public void removeDebuggerListener(){
+    public void removeDebuggerListener() {
         mDebuggerListener = null;
     }
 
-    private void showStreamMessage(String message){
+    private void showStreamMessage(String message) {
         ListenerMessage.showStreamMessage(mStreamListener, message);
     }
 
-    private void showDebugMessage(String message, DebugType type){
+    private void showDebugMessage(String message, DebugType type) {
         ListenerMessage.showDebugMessage(mDebuggerListener, message, type);
     }
 }

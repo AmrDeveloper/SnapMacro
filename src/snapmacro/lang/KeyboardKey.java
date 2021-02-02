@@ -47,7 +47,7 @@ enum KeyboardKey {
     // Virtual keys
     ENTER("ENTER", KeyEvent.VK_ENTER),
     BACK_SPACE("BACK_SPACE", KeyEvent.VK_BACK_SPACE),
-    CAPS_LOCK("CAPS_LOCK", KeyEvent.VK_CAPS_LOCK),
+    CAPS_LOCK("BACK_SPACE", KeyEvent.VK_CAPS_LOCK),
     TAB("TAB", KeyEvent.VK_TAB),
     SPACE("SPACE", KeyEvent.VK_SPACE),
     ESCAPE("ESCAPE", KeyEvent.VK_ESCAPE),

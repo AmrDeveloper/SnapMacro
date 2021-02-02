@@ -84,7 +84,7 @@ public class SnapEditor {
                     matcher.group("PAREN") != null ? "paren" :
                     matcher.group("BRACE") != null ? "brace" :
                     matcher.group("BRACKET") != null ? "bracket" :
-                    matcher.group("STRING") != null ? "string" :
+                    matcher.group("KEYS") != null ? "keys" :
                     matcher.group("OPERATION") != null ? "operation" :
                     matcher.group("NUMBER") != null ? "number" :
                     matcher.group("COMMENT") != null ? "comment" :

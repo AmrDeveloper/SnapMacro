@@ -256,11 +256,8 @@ public class MainController implements Initializable {
     private void changeEditorTheme(MouseEvent...event){
         Settings settings = new Settings();
         Theme theme = settings.getThemeEnum();
-        if(theme == Theme.DARK){
-            settings.setTheme(Theme.WHITE);
-        }else{
-            settings.setTheme(Theme.DARK);
-        }
+        theme = (theme == Theme.DARK) ? Theme.WHITE : Theme.DARK;
+        settings.setTheme(theme);
     }
 
     private void clearDebugArea(MouseEvent...event){

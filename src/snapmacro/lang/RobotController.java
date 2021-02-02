@@ -59,6 +59,10 @@ public class RobotController {
         mKeyboardController.keyboardPressKey(key);
     }
 
+    public void keyboardReleaseKey(int key) {
+        mKeyboardController.keyboardReleaseKey(key);
+    }
+
     public void captureScreen(String path) {
         try{
             mScreenController.takeScreenshot(path);

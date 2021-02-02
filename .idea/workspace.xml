@@ -6,28 +6,35 @@
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SnapMacro_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/SnapMacro_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/SnapMacro.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/SnapMacro.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/KeyboardKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/RobotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/RobotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/dark_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/white_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/styles/white_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/ui/SnapEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/ui/SnapEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/ui/SnapSyntax.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/ui/SnapSyntax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/utils/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/utils/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/KeyboardKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/RobotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/RobotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/styles/dark_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/white_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/styles/white_theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/ui/SnapEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/ui/SnapEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/ui/SnapSyntax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/ui/SnapSyntax.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +72,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/META-INF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jar" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -110,7 +118,10 @@
       <workItem from="1612187966470" duration="916000" />
       <workItem from="1612194002237" duration="559000" />
       <workItem from="1612194661508" duration="168000" />
-      <workItem from="1612194847498" duration="2000" />
+      <workItem from="1612194847498" duration="1958000" />
+      <workItem from="1612215583285" duration="227000" />
+      <workItem from="1612224104710" duration="65000" />
+      <workItem from="1612224324498" duration="192000" />
     </task>
     <servers />
   </component>
@@ -142,21 +153,29 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="195" key="GridCell.Tab.0.bottom" timestamp="1612194830347">
+    <state x="420" y="238" key="FileChooserDialogImpl" timestamp="1612195104113">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="195" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1612194830347" />
-    <state width="1237" height="195" key="GridCell.Tab.0.center" timestamp="1612194830347">
+    <state x="420" y="238" key="FileChooserDialogImpl/0.0.1280.994@0.0.1280.994" timestamp="1612195104113" />
+    <state width="1237" height="195" key="GridCell.Tab.0.bottom" timestamp="1612272145450">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="195" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1612194830347" />
-    <state width="1237" height="195" key="GridCell.Tab.0.left" timestamp="1612194830347">
+    <state width="1237" height="195" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1612272145450" />
+    <state width="1237" height="195" key="GridCell.Tab.0.center" timestamp="1612272145450">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="195" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1612194830347" />
-    <state width="1237" height="195" key="GridCell.Tab.0.right" timestamp="1612194830347">
+    <state width="1237" height="195" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1612272145450" />
+    <state width="1237" height="195" key="GridCell.Tab.0.left" timestamp="1612272145434">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="195" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1612194830347" />
+    <state width="1237" height="195" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1612272145434" />
+    <state width="1237" height="195" key="GridCell.Tab.0.right" timestamp="1612272145450">
+      <screen x="0" y="0" width="1280" height="994" />
+    </state>
+    <state width="1237" height="195" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1612272145450" />
+    <state x="120" y="71" key="SettingsEditor" timestamp="1612195106361">
+      <screen x="0" y="0" width="1280" height="994" />
+    </state>
+    <state x="120" y="71" key="SettingsEditor/0.0.1280.994@0.0.1280.994" timestamp="1612195106361" />
   </component>
 </project>
