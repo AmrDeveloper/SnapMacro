@@ -21,39 +21,111 @@ Then You can download SnapMacro from [Here](https://github.com/AmrDeveloper/Snap
 
 ### Instructions
 
-#### Perform right or left mouse click
+#### Mouse
+
+##### Perform right or left mouse click
 `
 mouse click (left | right)
 `
 
-#### Move mouse cursor to x, y position
+##### Move mouse cursor to x, y position
 `
 mouse point x y
 `
 
-#### Sleep execution s milliseconds
+#### Keyboard
+
+#### Keyboard press key
 `
-sleep s
+keyboard press key
 `
 
-#### Execute the body statements n times
+#### Keyboard keys
+```
+F1 to F11
+F12 to F24
+DIGIT_0 to DIGIT_9
+CHAR_A to CHAR_Z
+```
+
+#### Screen to take screenshot and store it in path
+`
+screen capture "C:\Users\AmrDeveloper\Desktop\screenshots"
+`
+
+##### Sleep execution s milliseconds
+`
+delay s
+`
+
+#### Variables assign and reassign
+`
+var x = 10
+x = x + 1
+`
+
+#### If to execute the body if the condition is true
+```
+if(condition) {
+
+}
+```
+
+##### Execute the body statements n times
 ```
 repeat(n) {
    
 }
 ```
 
-#### Function decleration to make easy to call or repeat instructions
+##### Execute the body statements while the condition is true
+```
+while(condition) {
+   
+}
+```
+
+##### Function declaration to make easy to call or repeat instructions
 ```
 function name {
 
 }
 ```
-#### Function call to execute function instructions
+
+##### Function call to execute function instructions
 `
 name()
 `
-#### Comments used to make your script more readable
-`
-#todo
-`
+
+#### Boolean values
+```
+true
+false
+```
+
+#### Math Operations
+```
++ / - *
+```
+
+#### Bitwise Operations
+```
+x and y
+x or y
+x xor y
+```
+
+#### Restart the execution to start from first line
+```
+restart
+```
+
+#### Exit the execution to stop the script
+```
+exit
+```
+
+#### Comments to make your script more readable
+```
+# .....
+```
