@@ -12,8 +12,24 @@
   <component name="ChangeListManager">
     <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/AssignExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/AssignExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/BlockStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/BlockStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/CallExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/CallExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/FunctionStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/FunctionStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/IfStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/IfStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/LiteralExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/LiteralExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/RepeatStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/RepeatStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/ScreenStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/ScreenStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SleepStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SleepStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SnapCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SnapCallable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/TokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/UnaryExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/UnaryExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/VarStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/VarStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/WhileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/WhileStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/utils/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,22 +158,22 @@
       <screen x="0" y="0" width="1280" height="994" />
     </state>
     <state x="420" y="238" key="FileChooserDialogImpl/0.0.1280.994@0.0.1280.994" timestamp="1612195104113" />
-    <state width="1237" height="194" key="GridCell.Tab.0.bottom" timestamp="1612348137476">
+    <state width="1237" height="194" key="GridCell.Tab.0.bottom" timestamp="1612349428875">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1612348137476" />
-    <state width="1237" height="194" key="GridCell.Tab.0.center" timestamp="1612348137476">
+    <state width="1237" height="194" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1612349428875" />
+    <state width="1237" height="194" key="GridCell.Tab.0.center" timestamp="1612349428875">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1612348137476" />
-    <state width="1237" height="194" key="GridCell.Tab.0.left" timestamp="1612348137476">
+    <state width="1237" height="194" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1612349428875" />
+    <state width="1237" height="194" key="GridCell.Tab.0.left" timestamp="1612349428875">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1612348137476" />
-    <state width="1237" height="194" key="GridCell.Tab.0.right" timestamp="1612348137476">
+    <state width="1237" height="194" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1612349428875" />
+    <state width="1237" height="194" key="GridCell.Tab.0.right" timestamp="1612349428875">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1612348137476" />
+    <state width="1237" height="194" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1612349428875" />
     <state x="120" y="71" key="SettingsEditor" timestamp="1612276525327">
       <screen x="0" y="0" width="1280" height="994" />
     </state>

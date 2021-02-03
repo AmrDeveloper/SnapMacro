@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BlockStatement extends Statement{
 
-    private List<Statement> statementList;
+    private final List<Statement> statementList;
 
     public BlockStatement(List<Statement> statementList) {
         this.statementList = statementList;

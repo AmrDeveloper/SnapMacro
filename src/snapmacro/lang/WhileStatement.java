@@ -2,8 +2,8 @@ package snapmacro.lang;
 
 public class WhileStatement extends Statement {
 
-    private Expression condition;
-    private Statement loopBody;
+    private final Expression condition;
+    private final Statement loopBody;
 
     public WhileStatement(Expression condition, Statement loopBody) {
         this.condition = condition;

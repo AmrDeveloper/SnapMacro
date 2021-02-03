@@ -63,7 +63,7 @@ public class Interpreter implements
                 throw new ExitEvent();
             }
             case MINUS: {
-                checkNumberOperands(expr.getOperator(), left, right);
+                checkNumberOperands(left, right);
                 return (double) left - (double) right;
             }
             case STAR: {
@@ -75,11 +75,11 @@ public class Interpreter implements
                     }
                     return result.toString();
                 }
-                checkNumberOperands(expr.getOperator(), left, right);
+                checkNumberOperands(left, right);
                 return (double) left * (double) right;
             }
             case SLASH: {
-                checkNumberOperands(expr.getOperator(), left, right);
+                checkNumberOperands(left, right);
                 if ((double) right == 0) {
                     showDebugMessage("Can't use slash with zero double.", DebugType.ERROR);
                     throw new ExitEvent();
@@ -87,19 +87,19 @@ public class Interpreter implements
                 return (double) left / (double) right;
             }
             case GREATER: {
-                checkNumberOperands(expr.getOperator(), left, right);
+                checkNumberOperands(left, right);
                 return Double.parseDouble(left.toString()) > Double.parseDouble(right.toString());
             }
             case GREATER_EQUAL: {
-                checkNumberOperands(expr.getOperator(), left, right);
+                checkNumberOperands(left, right);
                 return Double.parseDouble(left.toString()) >= Double.parseDouble(right.toString());
             }
             case LESS: {
-                checkNumberOperands(expr.getOperator(), left, right);
+                checkNumberOperands(left, right);
                 return Double.parseDouble(left.toString()) < Double.parseDouble(right.toString());
             }
             case LESS_EQUAL: {
-                checkNumberOperands(expr.getOperator(), left, right);
+                checkNumberOperands(left, right);
                 return Double.parseDouble(left.toString()) <= Double.parseDouble(right.toString());
             }
             case BANG_EQUAL: {
@@ -152,7 +152,7 @@ public class Interpreter implements
         Object right = evaluate(expr.getRightExp());
         switch (expr.getOperator().getType()) {
             case MINUS: {
-                checkNumberOperand(expr.getOperator(), right);
+                checkNumberOperand(right);
                 return -(double) right;
             }
             case BANG: {
@@ -171,9 +171,7 @@ public class Interpreter implements
     @Override
     public Object visit(CallExp expr) {
         Object callee = evaluate(expr.getCallee());
-
         SnapCallable function = (SnapCallable) callee;
-
         return function.call(this);
     }
 
@@ -191,7 +189,6 @@ public class Interpreter implements
         Environment whileEnvironment = new Environment(environment);
         Environment previous = this.environment;
         this.environment = whileEnvironment;
-
         while (isTruthy(evaluate(statement.getCondition()))) {
             execute(statement.getLoopBody());
         }
@@ -393,13 +390,13 @@ public class Interpreter implements
                 .replaceAll("\\\\t", "\t");
     }
 
-    private void checkNumberOperand(Token operator, Object operand) {
+    private void checkNumberOperand(Object operand) {
         if (operand instanceof Double) return;
         showDebugMessage("Operand must be a number.", DebugType.ERROR);
         throw new ExitEvent();
     }
 
-    private void checkNumberOperands(Token operator, Object left, Object right) {
+    private void checkNumberOperands(Object left, Object right) {
         if (left instanceof Number && right instanceof Number) return;
         showDebugMessage("Operands must the same type -> number.", DebugType.ERROR);
         throw new ExitEvent();

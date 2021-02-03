@@ -4,7 +4,7 @@ import java.util.prefs.Preferences;
 
 public class Settings {
 
-    private Preferences mSettingsPreference;
+    private final Preferences mSettingsPreference;
 
     private static final String SETTINGS = "settings";
     private static final String THEME = "theme";

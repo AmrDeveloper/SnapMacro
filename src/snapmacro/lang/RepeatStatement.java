@@ -2,8 +2,8 @@ package snapmacro.lang;
 
 public class RepeatStatement extends Statement {
 
-    private Expression value;
-    private Statement loopBody;
+    private final Expression value;
+    private final Statement loopBody;
 
     public RepeatStatement(Expression value, Statement loopBody) {
         this.value = value;

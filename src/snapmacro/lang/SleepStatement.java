@@ -2,7 +2,7 @@ package snapmacro.lang;
 
 public class SleepStatement extends Statement {
 
-    private Expression value;
+    private final Expression value;
 
     public SleepStatement(Expression value){
         this.value = value;

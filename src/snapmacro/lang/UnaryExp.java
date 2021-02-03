@@ -2,8 +2,8 @@ package snapmacro.lang;
 
 public class UnaryExp extends Expression {
 
-    private Token operator;
-    private Expression rightExp;
+    private final Token operator;
+    private final Expression rightExp;
 
     public UnaryExp(Token operator, Expression rightExp) {
         this.operator = operator;

@@ -2,8 +2,8 @@ package snapmacro.lang;
 
 public class AssignExp extends Expression {
 
-    private Token name;
-    private Expression value;
+    private final Token name;
+    private final Expression value;
 
     public AssignExp(Token name, Expression value) {
         this.name = name;

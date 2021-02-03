@@ -4,9 +4,9 @@ import java.util.List;
 
 public class CallExp extends Expression {
 
-    private Expression callee;
-    private Token closingParenthesis;
-    private List<Expression> arguments;
+    private final Expression callee;
+    private final Token closingParenthesis;
+    private final List<Expression> arguments;
 
     public CallExp(Expression calle, Token paren, List<Expression> arguments) {
         this.callee = calle;

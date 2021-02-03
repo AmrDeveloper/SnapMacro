@@ -2,8 +2,8 @@ package snapmacro.lang;
 
 public class VarStatement extends Statement {
 
-    private Token name;
-    private Expression initializer;
+    private final Token name;
+    private final Expression initializer;
 
     public VarStatement(Token name, Expression initializer) {
         this.name = name;

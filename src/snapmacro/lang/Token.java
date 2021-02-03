@@ -1,6 +1,7 @@
 package snapmacro.lang;
 
 public class Token {
+
     private final TokenType type;
     private final String lexeme;
     private final Object literal;

@@ -2,19 +2,19 @@ package snapmacro.lang;
 
 public class ScreenStatement extends Statement {
 
-    private Token  order;
-    private Token  value;
+    private final Token order;
+    private final Token value;
 
-    public ScreenStatement(Token  order, Token  value){
+    public ScreenStatement(Token order, Token value) {
         this.order = order;
         this.value = value;
     }
 
-    public Token  getOrder() {
+    public Token getOrder() {
         return order;
     }
 
-    public Token  getValue() {
+    public Token getValue() {
         return value;
     }
 

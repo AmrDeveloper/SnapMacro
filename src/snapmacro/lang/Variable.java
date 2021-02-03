@@ -2,7 +2,7 @@ package snapmacro.lang;
 
 public class Variable extends Expression{
 
-    private Token name;
+    private final Token name;
 
     public Variable(Token name) {
         this.name = name;

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class FunctionStatement extends Statement {
 
-    private Token name;
-    private List<Statement> functionBody;
+    private final Token name;
+    private final List<Statement> functionBody;
 
     public FunctionStatement(Token name, List<Statement> functionBody) {
         this.name = name;

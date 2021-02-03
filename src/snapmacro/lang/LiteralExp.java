@@ -2,7 +2,7 @@ package snapmacro.lang;
 
 public class LiteralExp extends Expression{
 
-    private Object value;
+    private final Object value;
 
     public LiteralExp(Object value) {
         this.value = value;
