@@ -18,6 +18,7 @@ public class Interpreter implements
 
     public void interpret(List<Statement> statements) {
         showDebugMessage("Start Interpreter", DebugType.WARN);
+        injectBuiltinFunctions();
         try {
             for (Statement statement : statements) {
                 execute(statement);
@@ -25,6 +26,10 @@ public class Interpreter implements
         } catch (ExitEvent event) {
             showDebugMessage("Exit Interpreter", DebugType.ERROR);
         }
+    }
+
+    private void injectBuiltinFunctions() {
+        globals.define("pixelColor", (SnapCallable) interpreter -> robotController.getCurrentPixelColor());
     }
 
     @Override

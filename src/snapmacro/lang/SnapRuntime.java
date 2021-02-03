@@ -17,10 +17,6 @@ public class SnapRuntime {
     private StreamListener mStreamListener;
     private DebuggerListener mDebuggerListener;
 
-    public SnapRuntime(){
-
-    }
-
     public SnapRuntime(StreamListener listener){
         mStreamListener = listener;
         interpreter.setStreamListener(mStreamListener);
@@ -59,7 +55,7 @@ public class SnapRuntime {
     }
 
     public void runSnapCode(String source) {
-        SnapLexer tankLexer = new SnapLexer(source);
+        SnapLexer tankLexer = new SnapLexer(source, mDebuggerListener);
         List<Token> tokens = tankLexer.scanTokens();
         SnapParser parser = new SnapParser(tokens, mDebuggerListener);
         List<Statement> statements = parser.parse();
@@ -99,8 +95,7 @@ public class SnapRuntime {
     }
 
     private static void report(int line, String where, String message) {
-        System.err.println(
-                "[line " + line + "] Error" + where + ": " + message);
+        System.err.println("[line " + line + "] Error" + where + ": " + message);
         hadError = true;
     }
 

@@ -9,7 +9,9 @@ import static snapmacro.lang.TokenType.*;
 
 public class SnapLexer {
 
-    private String source;
+    private final String source;
+    private final DebuggerListener debuggerListener;
+
     private final List<Token> tokens = new ArrayList<>();
     private static final Map<String, TokenType> keywords;
 
@@ -41,12 +43,13 @@ public class SnapLexer {
         keywords.put("exit", EXIT);
     }
 
-    public SnapLexer(String source){
-         this.source = source;
+    public SnapLexer(String source, DebuggerListener debuggerListener) {
+        this.source = source;
+        this.debuggerListener = debuggerListener;
     }
 
     public List<Token> scanTokens() {
-        while (!isAtEnd()){
+        while (!isAtEnd()) {
             start = current;
             scanToken();
         }
@@ -54,72 +57,74 @@ public class SnapLexer {
         return tokens;
     }
 
-    private void scanToken(){
-       char c = pointToNextChar();
-       switch (c){
-           case '(':
-               addToken(LEFT_PAREN);
-               break;
-           case ')':
-               addToken(RIGHT_PAREN);
-               break;
-           case '{':
-               addToken(LEFT_BRACE);
-               break;
-           case '}':
-               addToken(RIGHT_BRACE);
-               break;
-           case '-':
-               addToken(match('-') ? MINUS_MINUS : MINUS);
-               break;
-           case '+':
-               addToken(match('+') ? PLUS_PLUS : PLUS);
-               break;
-           case '*':
-               addToken(STAR);
-               break;
-           case '/':
-               addToken(SLASH);
-               break;
-           case '!':
-               addToken(match('=') ? BANG_EQUAL : BANG);
-               break;
-           case '=':
-               addToken(match('=') ? EQUAL_EQUAL : EQUAL);
-               break;
-           case '<':
-               addToken(match('=') ? LESS_EQUAL : LESS);
-               break;
-           case '>':
-               addToken(match('=') ? GREATER_EQUAL : GREATER);
-               break;
-           case ' ':
-           case '\r':
-           case '\t':
-               // Ignore whitespace and comments.
-               break;
-           case '#':
-               while (getCurrentChar() != '\n' && !isAtEnd()) pointToNextChar();
-               break;
-           case '\n':
-               line++;
-               break;
-           case '\'':
-               scanChar();
-               break;
-           case '"':
-               scanString();
-               break;
-           default:
-               if (isDigit(c)) {
-                   scanNumber();
-               } else if (isAlpha(c)) {
-                   scanIdentifier();
-               } else {
-                   //TankRuntime.error(line, "Unexpected character.");
-                   throw new RuntimeException("Invalid");
-               }
-       }
+    private void scanToken() {
+        char c = pointToNextChar();
+        switch (c) {
+            case '(':
+                addToken(LEFT_PAREN);
+                break;
+            case ')':
+                addToken(RIGHT_PAREN);
+                break;
+            case '{':
+                addToken(LEFT_BRACE);
+                break;
+            case '}':
+                addToken(RIGHT_BRACE);
+                break;
+            case '-':
+                addToken(match('-') ? MINUS_MINUS : MINUS);
+                break;
+            case '+':
+                addToken(match('+') ? PLUS_PLUS : PLUS);
+                break;
+            case '*':
+                addToken(STAR);
+                break;
+            case '/':
+                addToken(SLASH);
+                break;
+            case '!':
+                addToken(match('=') ? BANG_EQUAL : BANG);
+                break;
+            case '=':
+                addToken(match('=') ? EQUAL_EQUAL : EQUAL);
+                break;
+            case '<':
+                addToken(match('=') ? LESS_EQUAL : LESS);
+                break;
+            case '>':
+                addToken(match('=') ? GREATER_EQUAL : GREATER);
+                break;
+            case ' ':
+            case '\r':
+            case '\t':
+                // Ignore whitespace and comments.
+                break;
+            case '#':
+                while (getCurrentChar() != '\n' && !isAtEnd()) pointToNextChar();
+                break;
+            case '\n':
+                line++;
+                break;
+            case '\'':
+                scanChar();
+                break;
+            case '"':
+                scanString();
+                break;
+            default:
+                if (c == '0' && match('x')) {
+                    scanHexNumber();
+                } else if (isDigit(c)) {
+                    scanNumber();
+                } else if (isAlpha(c)) {
+                    scanIdentifier();
+                } else {
+                    debuggerListener.getDebugMessages("Un supported character at line " + line, DebugType.ERROR);
+                    throw new ExitEvent();
+                }
+        }
     }
 
     private void scanNumber() {
@@ -134,6 +139,11 @@ public class SnapLexer {
         addToken(NUMBER, Double.parseDouble(source.substring(start, current)));
     }
 
+    private void scanHexNumber() {
+        while (isHexDigit(getCurrentChar())) pointToNextChar();
+        addToken(HEX_NUMBER, source.substring(start, current));
+    }
+
     private void scanString() {
         while (getCurrentChar() != '"' && !isAtEnd()) {
             if (getCurrentChar() == '\n') line++;
@@ -142,8 +152,8 @@ public class SnapLexer {
 
         // Unterminated scanString.
         if (isAtEnd()) {
-            //TankRuntime.error(line, "Unterminated scanString.");
-            return;
+            debuggerListener.getDebugMessages("Unterminated scanString " + line, DebugType.ERROR);
+            throw new ExitEvent();
         }
 
         // The closing ".
@@ -157,10 +167,12 @@ public class SnapLexer {
     private void scanChar() {
         String value = source.substring(start + 1, start + 2);
         pointToNextChar();
+
         if (getCurrentChar() != '\'') {
-            //TankRuntime.error(line, "Unterminated char variable.");
-            return;
+            debuggerListener.getDebugMessages("Unterminated char variable " + line, DebugType.ERROR);
+            throw new ExitEvent();
         }
+
         pointToNextChar();
         addToken(CHAR, value.charAt(0));
     }
@@ -196,6 +208,12 @@ public class SnapLexer {
 
     private boolean isDigit(char c) {
         return c >= '0' && c <= '9';
+    }
+
+    private boolean isHexDigit(char c) {
+        if (isDigit(c)) return true;
+        if (c >= 'a' && c <= 'f') return true;
+        return (c >= 'A' && c <= 'F');
     }
 
     private boolean match(char expected) {

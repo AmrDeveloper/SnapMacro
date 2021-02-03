@@ -87,6 +87,7 @@ public class SnapEditor {
                     matcher.group("KEYS") != null ? "keys" :
                     matcher.group("OPERATION") != null ? "operation" :
                     matcher.group("NUMBER") != null ? "number" :
+                    matcher.group("HEXNUMBER") != null ? "hexnumber" :
                     matcher.group("COMMENT") != null ? "comment" :
                     null; /* never happens */
             assert styleClass != null;

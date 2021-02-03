@@ -280,7 +280,7 @@ public class SnapParser {
     private Expression primary() {
         if (match(FALSE)) return new LiteralExp(false);
         if (match(TRUE)) return new LiteralExp(true);
-        if (match(NUMBER, STRING, CHAR)) return new LiteralExp(previous().getLiteral());
+        if (match(NUMBER, HEX_NUMBER, STRING, CHAR)) return new LiteralExp(previous().getLiteral());
         if (match(IDENTIFIER)) return new Variable(previous());
         System.out.println(previous());
         showDebugMessage("Invalid Primary Exception", DebugType.ERROR);

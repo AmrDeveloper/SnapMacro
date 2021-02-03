@@ -27,4 +27,13 @@ public class ScreenController {
         File screenshot = new File(path);
         ImageIO.write(bufferedImage, "jpg", screenshot);
     }
+
+    public String getCurrentPixelColor() {
+        PointerInfo pointerInfo = MouseInfo.getPointerInfo();
+        Point point = pointerInfo.getLocation();
+        int x = (int) point.getX();
+        int y = (int) point.getY();
+        Color color = mCursorRobot.getPixelColor(x, y);
+        return String.format("0x%02x%02x%02x%n", color.getRed(), color.getGreen(), color.getBlue());
+    }
 }

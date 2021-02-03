@@ -35,6 +35,7 @@ public class SnapSyntax {
     private static final String BRACKET_PATTERN = "\\[|\\]";
     private static final String COMMENT_PATTERN = "#[0-9a-zA-Z ]*";
     private static final String OPERATION_PATTERN = "==|>|<|!=|>=|<=|=|>|<|%|-|\\+|\\-|\\-=|\\^|\\&|\\|::|\\?|\\*";
+    private static final String HEX_NUMBERS_PATTERN = "0x[0-9a-fA-F]+";
     private static final String NUMBERS_PATTERN = "[0-9]+";
 
     public static final Pattern PATTERN = Pattern.compile(
@@ -45,6 +46,8 @@ public class SnapSyntax {
                     + "|(?<BRACKET>" + BRACKET_PATTERN + ")"
                     + "|(?<COMMENT>" + COMMENT_PATTERN + ")"
                     + "|(?<OPERATION>" + OPERATION_PATTERN + ")"
+                    + "|(?<HEXNUMBER>" + HEX_NUMBERS_PATTERN + ")"
                     + "|(?<NUMBER>" + NUMBERS_PATTERN + ")"
+
     );
 }

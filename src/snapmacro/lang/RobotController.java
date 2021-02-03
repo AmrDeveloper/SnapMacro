@@ -75,6 +75,10 @@ public class RobotController {
         }
     }
 
+    public String getCurrentPixelColor() {
+        return mScreenController.getCurrentPixelColor();
+    }
+
     public void delay(int time){
         mCursorRobot.delay(time);
     }

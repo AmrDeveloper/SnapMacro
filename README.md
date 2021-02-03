@@ -121,6 +121,15 @@ x or y
 x xor y
 ```
 
+#### Pixel Color to get color of current pointer position
+```
+mouse point 100 100
+var color = pixelColor()
+if(color == "0xffffff") {
+
+}
+```
+
 #### Restart the execution to start from first line
 ```
 restart

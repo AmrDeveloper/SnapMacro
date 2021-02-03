@@ -105,6 +105,10 @@
     -fx-fill: #d684ff;
 }
 
+.styled-text-area .text.hexnumber{
+    -fx-fill: #d684ff;
+}
+
 .paragraph-box:has-caret {
     -fx-background-color: #cccccc;
 }
