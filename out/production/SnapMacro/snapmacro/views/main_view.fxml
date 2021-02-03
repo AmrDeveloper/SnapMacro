@@ -9,42 +9,52 @@
 
 <AnchorPane fx:id="mainLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="snapmacro.controllers.MainController">
     <children>
-        <ImageView fx:id="runAction" fitHeight="25.0" fitWidth="25.0" layoutX="-54.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+        <ImageView fx:id="runAction" fitHeight="20.0" fitWidth="20.0" layoutX="-54.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
            <image>
               <Image url="@../res/run_icon.png" />
            </image>
         </ImageView>
-      <ImageView fx:id="debugAction" fitHeight="25.0" fitWidth="25.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="540.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="debugAction" fitHeight="20.0" fitWidth="20.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="540.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/debug_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="restartAction" fitHeight="25.0" fitWidth="25.0" layoutX="45.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="restartAction" fitHeight="20.0" fitWidth="20.0" layoutX="45.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/restart_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="loadAction" fitHeight="25.0" fitWidth="25.0" layoutX="219.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="loadAction" fitHeight="20.0" fitWidth="20.0" layoutX="219.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/load_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="saveAction" fitHeight="25.0" fitWidth="25.0" layoutX="300.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="saveAction" fitHeight="20.0" fitWidth="20.0" layoutX="300.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/save_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="cursorAction" fitHeight="25.0" fitWidth="25.0" layoutX="342.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="cursorAction" fitHeight="20.0" fitWidth="20.0" layoutX="342.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/cursor_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="clearAction" fitHeight="25.0" fitWidth="25.0" layoutX="385.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="clearAction" fitHeight="20.0" fitWidth="20.0" layoutX="385.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/clear_icon.png" />
          </image>
       </ImageView>
-      <SplitPane fx:id="snapLayoutSplitPane" dividerPositions="0.8" layoutX="3.0" layoutY="27.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <ImageView fx:id="stopAction" fitHeight="20.0" fitWidth="20.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="105.0">
+         <image>
+            <Image url="@../res/stop_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="themeAction" fitHeight="20.0" fitWidth="20.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="270.0">
+         <image>
+           <Image url="@../res/theme_icon.png" />
+         </image>
+      </ImageView>
+      <SplitPane fx:id="snapLayoutSplitPane" dividerPositions="0.8" layoutX="3.0" layoutY="27.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
@@ -58,15 +68,5 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <ImageView fx:id="stopAction" fitHeight="25.0" fitWidth="25.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="105.0">
-         <image>
-            <Image url="@../res/stop_icon.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="themeAction" fitHeight="25.0" fitWidth="25.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="270.0">
-         <image>
-           <Image url="@../res/theme_icon.png" />
-         </image>
-      </ImageView>
     </children>
 </AnchorPane>
