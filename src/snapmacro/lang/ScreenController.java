@@ -31,9 +31,7 @@ public class ScreenController {
     public String getCurrentPixelColor() {
         PointerInfo pointerInfo = MouseInfo.getPointerInfo();
         Point point = pointerInfo.getLocation();
-        int x = (int) point.getX();
-        int y = (int) point.getY();
-        Color color = mCursorRobot.getPixelColor(x, y);
+        Color color = mCursorRobot.getPixelColor(point.x, point.y);
         return String.format("0x%02x%02x%02x%n", color.getRed(), color.getGreen(), color.getBlue());
     }
 }

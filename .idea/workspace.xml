@@ -12,23 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapRuntime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/SnapRuntime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/TokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/TokenType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/ScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/ScreenController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/RobotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/RobotController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/ScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/ScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SnapLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SnapLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SnapParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SnapParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/SnapRuntime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/SnapRuntime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/TokenType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/dark_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/styles/dark_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/styles/white_theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/styles/white_theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/ui/SnapEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/ui/SnapEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/ui/SnapSyntax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/ui/SnapSyntax.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,22 +144,22 @@
       <screen x="0" y="0" width="1280" height="994" />
     </state>
     <state x="420" y="238" key="FileChooserDialogImpl/0.0.1280.994@0.0.1280.994" timestamp="1612195104113" />
-    <state width="1237" height="194" key="GridCell.Tab.0.bottom" timestamp="1612360816717">
+    <state width="1237" height="194" key="GridCell.Tab.0.bottom" timestamp="1612549293539">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1612360816717" />
-    <state width="1237" height="194" key="GridCell.Tab.0.center" timestamp="1612360816717">
+    <state width="1237" height="194" key="GridCell.Tab.0.bottom/0.0.1280.994@0.0.1280.994" timestamp="1612549293539" />
+    <state width="1237" height="194" key="GridCell.Tab.0.center" timestamp="1612549293539">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1612360816717" />
-    <state width="1237" height="194" key="GridCell.Tab.0.left" timestamp="1612360816717">
+    <state width="1237" height="194" key="GridCell.Tab.0.center/0.0.1280.994@0.0.1280.994" timestamp="1612549293539" />
+    <state width="1237" height="194" key="GridCell.Tab.0.left" timestamp="1612549293539">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1612360816717" />
-    <state width="1237" height="194" key="GridCell.Tab.0.right" timestamp="1612360816717">
+    <state width="1237" height="194" key="GridCell.Tab.0.left/0.0.1280.994@0.0.1280.994" timestamp="1612549293539" />
+    <state width="1237" height="194" key="GridCell.Tab.0.right" timestamp="1612549293539">
       <screen x="0" y="0" width="1280" height="994" />
     </state>
-    <state width="1237" height="194" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1612360816717" />
+    <state width="1237" height="194" key="GridCell.Tab.0.right/0.0.1280.994@0.0.1280.994" timestamp="1612549293539" />
     <state x="120" y="71" key="SettingsEditor" timestamp="1612276525327">
       <screen x="0" y="0" width="1280" height="994" />
     </state>

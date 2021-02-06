@@ -342,12 +342,8 @@ public class Interpreter implements
         showDebugMessage("Sleep Event", DebugType.WARN);
         Object value = evaluate(statement.getValue());
         if (value instanceof Number) {
-            long delay = ((Number) value).longValue();
-            try {
-                Thread.sleep(delay);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e.getMessage());
-            }
+            int time = ((Number) value).intValue();
+            robotController.delay(time);
         } else {
             showDebugMessage("Sleep value must be number", DebugType.ERROR);
             throw new ExitEvent();
