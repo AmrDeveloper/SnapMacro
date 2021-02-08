@@ -23,7 +23,6 @@ public class MouseController {
     }
 
     public void mouseWheels(int value) {
-        System.out.println(value);
         mCursorRobot.mouseWheel(value);
     }
 

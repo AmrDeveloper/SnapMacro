@@ -12,10 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="15bb763f-f26f-4117-abd2-83892c4e45c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/Interpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/ScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnapMacro/snapmacro/lang/ScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/ScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/ScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/lang/MouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/lang/MouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/snapmacro/views/main_view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +54,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/snapmacro/res" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.20795107" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Software\SnapMacro\src\snapmacro\res" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

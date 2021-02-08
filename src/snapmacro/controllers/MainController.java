@@ -43,6 +43,7 @@ public class MainController implements Initializable {
     @FXML private ImageView loadAction;
     @FXML private ImageView saveAction;
     @FXML private ImageView cursorAction;
+    @FXML private ImageView eyeAction;
     @FXML private ImageView clearAction;
     @FXML private ImageView themeAction;
 
@@ -63,6 +64,7 @@ public class MainController implements Initializable {
 
     //Constants
     private boolean showCursorPosition = false;
+    private boolean showCursorPositionPixel = false;
     private static final String DEBUG_TAG = MainController.class.getSimpleName();
     private static final int THREAD_AVAILABLE_NUMBER = Runtime.getRuntime().availableProcessors();
 
@@ -89,7 +91,8 @@ public class MainController implements Initializable {
         Tooltip.install(loadAction, new Tooltip("Load snap file (F9)"));
         Tooltip.install(saveAction, new Tooltip("Save snap File (F10)"));
         Tooltip.install(cursorAction, new Tooltip("Show cursor Position (F11)"));
-        Tooltip.install(clearAction, new Tooltip("Clear debug TextArea (F12)"));
+        Tooltip.install(eyeAction, new Tooltip("Show cursor Position (F12)"));
+        Tooltip.install(clearAction, new Tooltip("Clear debug TextArea (F13)"));
         Tooltip.install(themeAction, new Tooltip("Change Editor Theme (F1)"));
     }
 
@@ -101,6 +104,7 @@ public class MainController implements Initializable {
         loadAction.setOnMouseClicked(this::loadSnapScript);
         saveAction.setOnMouseClicked(this::saveSnapScript);
         cursorAction.setOnMouseClicked(this::showCursorPosition);
+        eyeAction.setOnMouseClicked(this::showCursorPositionPixel);
         clearAction.setOnMouseClicked(this::clearDebugArea);
         themeAction.setOnMouseClicked(this::changeEditorTheme);
     }
@@ -253,6 +257,33 @@ public class MainController implements Initializable {
         }
     }
 
+    private void showCursorPositionPixel(MouseEvent... event) {
+        showCursorPositionPixel = !showCursorPositionPixel;
+        if (showCursorPositionPixel) {
+            logger.info("Start showing Cursor position pixel");
+            currentFutureTask = executorService.submit(() -> {
+                try {
+                    Robot robot = new Robot();
+                    while (showCursorPositionPixel) {
+                        Thread.sleep(1000);
+                        Point position = CursorManager.getCursorPosition();
+                        Color color = robot.getPixelColor(position.x, position.y);
+                        String colorStr = String.format("0x%02x%02x%02x%n",
+                                color.getRed(),
+                                color.getGreen(),
+                                color.getBlue());
+                        Platform.runLater(() -> resultTextArea.appendText("Color : " + colorStr));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        } else {
+            logger.info("Stop showing Cursor position pixel");
+            currentFutureTask.cancel(false);
+        }
+    }
+
     private void changeEditorTheme(MouseEvent...event){
         Settings settings = new Settings();
         Theme theme = settings.getThemeEnum();
@@ -300,6 +331,9 @@ public class MainController implements Initializable {
                 showCursorPosition();
                 break;
             case F12:
+                showCursorPositionPixel();
+                break;
+            case F13:
                 clearDebugArea();
                 break;
         }

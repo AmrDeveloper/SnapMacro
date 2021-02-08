@@ -39,7 +39,7 @@
             <Image url="@../res/cursor_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="clearAction" fitHeight="20.0" fitWidth="20.0" layoutX="385.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="2.0">
+      <ImageView fx:id="clearAction" fitHeight="20.0" fitWidth="20.0" layoutX="385.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../res/clear_icon.png" />
          </image>
@@ -49,9 +49,14 @@
             <Image url="@../res/stop_icon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="themeAction" fitHeight="20.0" fitWidth="20.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="270.0">
+      <ImageView fx:id="themeAction" fitHeight="20.0" fitWidth="20.0" layoutX="106.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="2.0">
          <image>
            <Image url="@../res/theme_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="eyeAction" fitHeight="20.0" fitWidth="20.0" layoutX="290.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="2.0">
+         <image>
+            <Image url="@../res/eye_icon.png" />
          </image>
       </ImageView>
       <SplitPane fx:id="snapLayoutSplitPane" dividerPositions="0.8" layoutX="3.0" layoutY="27.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
