@@ -3,6 +3,8 @@
 Free and open source Cross-platform bot creator with a new scripting language called 
 snap to interact with mouse, keyboard and screen using snap scripting language 
 
+[![Download SnapMacro](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/snapmacro/files/latest/download)
+
 Snap language has many features to make it easy to implement your bot
   
 <img src="screenshots/screen1.PNG" width="48%"> <img src="screenshots/screen2.PNG" width="48%"> 
