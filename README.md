@@ -93,7 +93,7 @@ while(condition) {
 
 ##### Function declaration to make easy to call or repeat instructions
 ```
-function name {
+func name {
 
 }
 ```
