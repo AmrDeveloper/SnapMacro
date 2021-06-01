@@ -13,6 +13,18 @@ Snap language has many features to make it easy to implement your bot
 - flow conditions like if, while loop, repeat loop
 - sleep, exit statements
 
+### Editor shortcuts
+- `F1`    to change editor theme dark/light
+- `F5`    to run snap script
+- `F6`    to run snap script in debugging mode
+- `F7`    to restart the execution
+- `F8`    to stop running snap script
+- `F9`    to load new snap script file in new tab
+- `F10`   to save current snap script file
+- `F11`   Show/Stop the X and Y values in the current cursor position
+- `F12`   Show/Stop the pixel value in the current cursor position
+- `F13`   Clear the debugging info area  
+
 For examples take a look at example directory
 
 ### How to use?
